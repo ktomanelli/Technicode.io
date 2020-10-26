@@ -306,4 +306,10 @@ export default function Home({data}) {
 }
 ```
 
-This will display each post's title and date posted. For now the Link tag just as a 'to' property pointing to '/' which is the root. Next we'll have to set up...
+This will display each post's title and date posted, allowing us to click between each post to view.
+
+Now, aside from some styling, the blog site is done! I'm completely off WordPress, in fact I've written this entire blog post in markdown rather than in WordPress' editor and it's been a much more enjoyable experience.
+
+Now I'm looking forward to making some blog posts that aren't about issues with my blog site!
+
+If you'd like to look at the code for this blog/site, you can do so [here](https://github.com/ktomanelli/Technicode.io)
