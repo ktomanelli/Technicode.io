@@ -1,5 +1,15 @@
 import React from 'react'
 import {graphql} from 'gatsby'
+import styled from 'styled-components'
+import Layout from '../layouts/Layout'
+
+const StyledPost = styled.div`
+    padding:1rem;
+    margin-left:25vw;
+    color:white;
+    width:65%;
+`
+
 
 export default function Post({data}){
     const post = data.markdownRemark
@@ -9,11 +19,13 @@ export default function Post({data}){
         return date
     }
     const date = formatDate(post.frontmatter.date)
-    return<div>
+    return<Layout>
+        <StyledPost>
         <h1>{post.frontmatter.title}</h1>
         <p>{date.toDateString()}</p>
         <div dangerouslySetInnerHTML={{__html:post.html}}/>
-    </div>
+        </StyledPost>
+    </Layout>
 }
 
 export const query = graphql`

@@ -7,6 +7,7 @@
 module.exports = {
   /* Your site config here */
   plugins: [
+    `gatsby-plugin-styled-components`,
     'gatsby-plugin-sharp',
     {
       resolve:'gatsby-source-filesystem',
@@ -14,6 +15,17 @@ module.exports = {
         name: 'posts',
         path: `${__dirname}/src/posts`
       }
+    },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Space Mono`,
+            variants: [`400`, `700`]
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
