@@ -15,7 +15,6 @@ exports.createPages = async({actions,graphql})=>{
     `)
 
     data.allMarkdownRemark.nodes.forEach(post=>{
-        console.log('TITLE',post.frontmatter.title.replace(/\s+/g, '-').toLowerCase())
         const slug = post.frontmatter.title.replace(/\s+/g, '-').toLowerCase()
         actions.createPage({
             path:`/posts/${slug}`,

@@ -2,7 +2,12 @@ import { graphql, Link} from "gatsby"
 import React from "react"
 
 export default function Home({data}) {
-  const posts = data.allMarkdownRemark.nodes
+  const posts = data.allMarkdownRemark.nodes.sort()
+  const formatDate = (val)=>{
+    const date = new Date(Date.parse(val))
+    date.setHours(date.getHours() + 4);
+  return date
+  }
   return <>
     <h1>// Technicode.io</h1>
     <p>// All things Tech and Code</p>
@@ -10,7 +15,7 @@ export default function Home({data}) {
     {posts.map(post=>{
       const title = post.frontmatter.title
       const slug =`/posts/${title.replace(/\s+/g, '-').toLowerCase()}`
-      const date = new Date(Date.parse(post.frontmatter.date))
+      const date = formatDate(post.frontmatter.date)
       return(
       <div key={post.id}>
       <Link to={slug}>
