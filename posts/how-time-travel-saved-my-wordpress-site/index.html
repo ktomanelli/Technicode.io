@@ -1,0 +1,609 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 2.24.79"/><link as="script" rel="preload" href="/webpack-runtime-6b3b87391c7a86b77c10.js"/><link as="script" rel="preload" href="/framework-acb96471af32e2ccbc9d.js"/><link as="script" rel="preload" href="/app-10b6f47e5429585ae360.js"/><link as="script" rel="preload" href="/component---src-templates-post-js-0ec6894045e055c72fc7.js"/><link as="fetch" rel="preload" href="/page-data/posts/how-time-travel-saved-my-wordpress-site/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div><h1>How Time Travel Saved my WordPress Site</h1><p>Sat Sep 26 2020</p><div><p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/e2a428a126de6686b09468575d0414b4/71ba4/header.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 37%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsSAAALEgHS3X78AAACEElEQVQozw2OW0uTAQCGv7/QYSYDg5wuXermYS0Ud7C2xpw655q4rWW6rWkzRT+dumhzJ01zlhqS7ULqQuhCIgqMiiiLJDoIBYMIgv5ABBFCF0/f3cPLw8sjHJMfxnRSTdjrovWMgfyNFPdvZUiLAUJuK1v5HD8Ln9j/+5v9P7/4/vkN/yReWUgjRi6xOhvHZmrirKERlVKBUFJ0EEVJMSXyYo7IZHTbTHzZeURK7ENfr6TdUIffaeNHYY/Chx3WUiLbm3cQw70EPC6WEpM4LAY6rS1oqk8gtJ42oK1VU1tTjavdztzVMXLXIoz0u5lPxvB12bnY7WTv9Tb5hQQucxNGXT0tRj0ddhu+nh70ulr6PE6spmaE5UyC9dsrvHvxlN1nT1hfzDA+FCY3lyQ+PUZ++TrfPr7l6+4r3j/fYm1mkIpyBfqmRiwmI6e0DajKSyk7KkerViGMBPw4bRbu5mZ5uHmP7OQwQU8nFzzn8Lvb2X6wwd7Lx+Tn4/hszcwMuKipUOB0OBCHr6BrqKPo0AHkRTLUKiWCVl2FVlNNm9nIzWyCZCxKNBIi6HPj6WpjSdpmoqMY6iSnuYGQo0XiSsoUpSil0mLpqEIq1FRVolEdR7BbzczPZpmaGGc4HGIxmyYRHWOwv5dIOMjE0ABT4ijx2DSDfefxd1hYTUbJjEeYvBzA6+4i4PcyIPn9vh7+A0HfMllKFbZ5AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="header"
+        title="header"
+        src="/static/e2a428a126de6686b09468575d0414b4/c1b63/header.png"
+        srcset="/static/e2a428a126de6686b09468575d0414b4/5a46d/header.png 300w,
+/static/e2a428a126de6686b09468575d0414b4/0a47e/header.png 600w,
+/static/e2a428a126de6686b09468575d0414b4/c1b63/header.png 1200w,
+/static/e2a428a126de6686b09468575d0414b4/d61c2/header.png 1800w,
+/static/e2a428a126de6686b09468575d0414b4/71ba4/header.png 1870w"
+        sizes="(max-width: 1200px) 100vw, 1200px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>This blog post was meant to be the second part of a 2 part series on creating reactive Mapbox data visualizations, but unfortunately that’s not what it’s going to be. Every great time travel story has a mistake, something so big that the protagonist(s) need to go back in time to stop themselves from making it. Here's mine.</p>
+<h2>The Mistake</h2>
+<p>Last week after I posted part 1 of my Mapbox &#x26; React Data Visualizations blog series, I noticed a problem with my WordPress's timezone. The site was in UTC whereas I am in EST. This is a 4-hour difference, large enough where I wanted to correct the problem.</p>
+<p>So naturally, I poked around in my WordPress settings, looking for where I could change this and I found it!</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1122px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/fd82ed594b7d34f7d9842283abed5cb8/62a6a/1.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 12.333333333333332%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAACXBIWXMAAAsSAAALEgHS3X78AAAAfklEQVQI12MwS6n8LxWY/d+9uP3/yxcv/r99+/b/58+fwfjt23f/P3789P/r16//P3/5AmR/hOMPHz6gYJAYSA+DXWLhf3W/hP+hJU3/379/D5b4BJT49OnT/0ePHoHxw4cP/9+/f///gwcP/r9+/Rps6atXr8AYxAfRMIcAAE8qjL2F4hwgAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="1"
+        title="1"
+        src="/static/fd82ed594b7d34f7d9842283abed5cb8/62a6a/1.png"
+        srcset="/static/fd82ed594b7d34f7d9842283abed5cb8/5a46d/1.png 300w,
+/static/fd82ed594b7d34f7d9842283abed5cb8/0a47e/1.png 600w,
+/static/fd82ed594b7d34f7d9842283abed5cb8/62a6a/1.png 1122w"
+        sizes="(max-width: 1122px) 100vw, 1122px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>So it was set to UTC +0 and EST is UTC -4, so I’ll just change that real quick and everything will be...</p>
+<p><img src="images/2.gif"></p>
+<p>Ummmmmm what just happened??</p>
+<p>So at this point, the main public-facing side of the site at <a href="https://technicode.io">https://technicode.io</a> was loading fine. All my blog posts were still visible and accessible, however, my admin console was not. Every time I tried to access the admin console I’d get this:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 801px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/a31402f4ff3d0bb002bdae567d1c20ce/2ad15/3.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 35%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsSAAALEgHS3X78AAABEklEQVQoz5WQTU7DMBCFcwrElh2LxHV+m+bXdpo4SUERP1IXLFlVgutwEi7AyR4ZB4d2g8Ti+UnjmW+e7Ww2IdI0R5JkCIIEYbhd3SqK0rVu73w/Bs1yHl3IoeLp9Ibj8QV5XkPrEYfDhK4bIGWLtu0xjvezD+j7u7k+YpoeIUQDxoILGLEcKkq5R1lKZFllGpVqZ3Woa2WgQuyNCEZLaZBEs4wtbtM6dLguh+f55tlFURswqSiEASyq1qX0BdQbxym2pGT3m9CSyel/KAklrCplnBLblORNo396OgilUakBohnMrAFamHVK+pdc6/Orrp4+cPP+hevXT9wmGj7jC/Ac+h+5uxFcPsMrH8D8FHxmfAMrrukkuaf2OgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="3"
+        title="3"
+        src="/static/a31402f4ff3d0bb002bdae567d1c20ce/2ad15/3.png"
+        srcset="/static/a31402f4ff3d0bb002bdae567d1c20ce/5a46d/3.png 300w,
+/static/a31402f4ff3d0bb002bdae567d1c20ce/0a47e/3.png 600w,
+/static/a31402f4ff3d0bb002bdae567d1c20ce/2ad15/3.png 801w"
+        sizes="(max-width: 801px) 100vw, 801px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Something was very wrong. Somehow me changing the time zone broke my site entirely. That’s an interesting feature, WordPress! Naturally I rebooted the server to see if that would fix whatever I had just broken but when I tried to access the admin console again, I got the same redirect message.</p>
+<p>Now being pretty lost on how to proceed, I turned to Google and was able to find an <a href="https://www.wpbeginner.com/wp-tutorials/how-to-fix-error-too-many-redirects-issue-in-wordpress/">article</a> which goes over how to resolve this issue!</p>
+<p>Perfect! First step?</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 596px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/cd10b88ba935b1311fc374a8a808f7ec/699b7/4.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 72%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsSAAALEgHS3X78AAABl0lEQVQ4y61TAXKDIBDM/3+ZxqggIKjRgEm2txitbdOZzrTM7HAI7O3t4eF+m5FCg9g7pE7mziJJHINB9EpmnfcTv3cGaWgX8DvXgjiNSGkG8MAhzTNUY6GNldmgUhq1alDWGm9FKbPCqaxwrlSOCZ7hfiXnTucKx+MbvPfgOKSUUNc1tFJQgq7r0IWQZx4ahgFt28ILgqwZh7y/wD+/3W63hZBB3/cb/jIeDyn5fr/DWZdVUuG5KNBI6dM0YRzHX+OTQpIVpyITlmUJrXVWm8sXsOxXWPdpAa3bCI0xsNbicrlsoD/OWVjnMF2vuH4BK1htIulGyJKpsBHSvSrGvESsSfYlkvQlIRWyU5TNMtZDIfisPMPuIGsnqvt+2BJ/I1R8V+IdccpNafKh/FwkmRUixquyfck/esiGsBm8mDM/s1M1L6wW7H0cLwNGNkj25nn+IKQi+kg4IeTltnVLkkb+iLqC0mp71IT3LWrjUGiLszYYr/GjKTHGDVt2KW/1c3km/acfIFvSDbChhxPE9FTI1/1fg1zvr+E3Ob/bkWIAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="4"
+        title="4"
+        src="/static/cd10b88ba935b1311fc374a8a808f7ec/699b7/4.png"
+        srcset="/static/cd10b88ba935b1311fc374a8a808f7ec/5a46d/4.png 300w,
+/static/cd10b88ba935b1311fc374a8a808f7ec/699b7/4.png 596w"
+        sizes="(max-width: 596px) 100vw, 596px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Go to settings in the admin console and change these values! Okay, except I can’t do that because I don’t have access to my admin console.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 578px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/df4e0b9322c46a8ec42c1c811a227b3b/508ef/5.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 69.33333333333334%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsSAAALEgHS3X78AAACLklEQVQ4y5VT2W7bMBDU/39WgR5G0cRAE9ROm8StdVEkRV22zmi6Q0ZF0D6VwWbFPYZ7jCPo78DTe+D0Cfj5WWQn3yKP74It2QPnL0GyO+D5A5B+Ff0RsM/4+0TLeMVYKcx1gbF1mFqLqaMuMdUaY2NxrTQGkb5xGMVG3+zjKkzTjHEcMQwD1nVFVDcNUlUgKwxy0bk2iLMcSnSqNFRRQKUxjEphstjfM9qNDTFpiizLEMcxlmVB5JxDoRTyXEBEl1rB5Im3MblxBkuZYDa/MKsfcDqHFiD6jTHyrWGt9d/TNCFqpEK+YG2osNEZBidJEmC8WOSFhi7lYX4LkH31bWAUYrRtKy3XNQqphBVSjDiZyGDajZH2VO6lLG14mHECyI4IxFjqvu8RVVXlLwyiZtA2F9rO57PXaZohSZI/ILTxwbIsQQxWOc8zosvl4i808tWqciKlr4bzZUUhyck9JDdN7XPo/4c2/LfK3ywbWpZZBrtK6RAaiH2FUCJombf4Q9I8v/gsnyvOt+IBbW9x9+0ex8M99nuH21tgt1txOr3g4UF4/wQcDsDNDXA8CucfF2m58QW8PR6Qq26vrZ9NUZAKnbQ4ih5l2D26bhDfJO0NMsMgwXfB9XrxVCGpqX3LnAWXwPkFPnG75Nom3HQuPv2qlbfzXhRhu1xO13UBkINN0sQbWSVBA10s6rp53WBYRlXVfhG0O1eBlGP8BuZbJhm31W+avOLv838OwXh+A/IWKJ7TDYZKAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="5"
+        title="5"
+        src="/static/df4e0b9322c46a8ec42c1c811a227b3b/508ef/5.png"
+        srcset="/static/df4e0b9322c46a8ec42c1c811a227b3b/5a46d/5.png 300w,
+/static/df4e0b9322c46a8ec42c1c811a227b3b/508ef/5.png 578w"
+        sizes="(max-width: 578px) 100vw, 578px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Scrolling a bit further looks like I can make the change in my wp-config.php file awesome!</p>
+<p>So I ssh into my AWS Lightsail server, navigate to my wp-config file and open in vim. The necessary entries weren’t included in the file so I went ahead and added them.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 490px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/a13109ee1dbdd395841049a61965c9c5/41d3c/6.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 15%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsSAAALEgHS3X78AAAAsUlEQVQI1z2OTYvCMBRFU0uluHGhi7wm5qO1pjOiAzJiceVa///vOaYVXBwel/s4XBWGhB4Gmv6A6Q40PtB0e0zO0rbY9DN3TRqQvkfyvzhPvdlS1DXleo1alCilUEWBah8PzOvJOV0Z3Z3R3/n1Jy7+ytGd+Q9j5sYl3jjGP2LXo61huVrNoqJafkSTcCKkvDAvccbhtSNKZCeWnbYECZ+r/RcrBhFNVVVfyaIs5zzxBtniTginfPS+AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="6"
+        title="6"
+        src="/static/a13109ee1dbdd395841049a61965c9c5/41d3c/6.png"
+        srcset="/static/a13109ee1dbdd395841049a61965c9c5/5a46d/6.png 300w,
+/static/a13109ee1dbdd395841049a61965c9c5/41d3c/6.png 490w"
+        sizes="(max-width: 490px) 100vw, 490px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>I then saved the file, rebooted the server, and went to check the site:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 801px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/a31402f4ff3d0bb002bdae567d1c20ce/2ad15/3.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 35%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsSAAALEgHS3X78AAABEklEQVQoz5WQTU7DMBCFcwrElh2LxHV+m+bXdpo4SUERP1IXLFlVgutwEi7AyR4ZB4d2g8Ti+UnjmW+e7Ww2IdI0R5JkCIIEYbhd3SqK0rVu73w/Bs1yHl3IoeLp9Ibj8QV5XkPrEYfDhK4bIGWLtu0xjvezD+j7u7k+YpoeIUQDxoILGLEcKkq5R1lKZFllGpVqZ3Woa2WgQuyNCEZLaZBEs4wtbtM6dLguh+f55tlFURswqSiEASyq1qX0BdQbxym2pGT3m9CSyel/KAklrCplnBLblORNo396OgilUakBohnMrAFamHVK+pdc6/Orrp4+cPP+hevXT9wmGj7jC/Ac+h+5uxFcPsMrH8D8FHxmfAMrrukkuaf2OgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="3"
+        title="3"
+        src="/static/a31402f4ff3d0bb002bdae567d1c20ce/2ad15/3.png"
+        srcset="/static/a31402f4ff3d0bb002bdae567d1c20ce/5a46d/3.png 300w,
+/static/a31402f4ff3d0bb002bdae567d1c20ce/0a47e/3.png 600w,
+/static/a31402f4ff3d0bb002bdae567d1c20ce/2ad15/3.png 801w"
+        sizes="(max-width: 801px) 100vw, 801px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Shit.</p>
+<p>Okay, wait the article said to maybe try www in front of the URLs, I don’t believe I have that subdomain configured but let me give it a try anyway!</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 476px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/69455e198a2a4e719dea106373128be9/f2205/7.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 15%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsSAAALEgHS3X78AAAAu0lEQVQI1z3MzU7CQBSG4ZkaqYQuYKPTzk9PW2RKMTSAYlA3Lkj0/i/odayJizc5+XLyqPAVKR8HbOzx64iVFtutcZuequ1wcUhtcX36SZsddmlvWNw/oO/m3CxX6NkMpRRKa5T7/sRdr4zxzCW88yYfbMMTRzmzDwdGOXKQZ07yyotcGJsTmzZSrJYJyNC3CcuyP/A3UzeUXYuvPMF4pBRc6XDGTrc3jtqEKTH1VF3VFMXiH9EJzPN86gdQO07YDv8qDwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="7"
+        title="7"
+        src="/static/69455e198a2a4e719dea106373128be9/f2205/7.png"
+        srcset="/static/69455e198a2a4e719dea106373128be9/5a46d/7.png 300w,
+/static/69455e198a2a4e719dea106373128be9/f2205/7.png 476w"
+        sizes="(max-width: 476px) 100vw, 476px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Saved, rebooted aaaaand:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 801px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/a31402f4ff3d0bb002bdae567d1c20ce/2ad15/3.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 35%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsSAAALEgHS3X78AAABEklEQVQoz5WQTU7DMBCFcwrElh2LxHV+m+bXdpo4SUERP1IXLFlVgutwEi7AyR4ZB4d2g8Ti+UnjmW+e7Ww2IdI0R5JkCIIEYbhd3SqK0rVu73w/Bs1yHl3IoeLp9Ibj8QV5XkPrEYfDhK4bIGWLtu0xjvezD+j7u7k+YpoeIUQDxoILGLEcKkq5R1lKZFllGpVqZ3Woa2WgQuyNCEZLaZBEs4wtbtM6dLguh+f55tlFURswqSiEASyq1qX0BdQbxym2pGT3m9CSyel/KAklrCplnBLblORNo396OgilUakBohnMrAFamHVK+pdc6/Orrp4+cPP+hevXT9wmGj7jC/Ac+h+5uxFcPsMrH8D8FHxmfAMrrukkuaf2OgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="3"
+        title="3"
+        src="/static/a31402f4ff3d0bb002bdae567d1c20ce/2ad15/3.png"
+        srcset="/static/a31402f4ff3d0bb002bdae567d1c20ce/5a46d/3.png 300w,
+/static/a31402f4ff3d0bb002bdae567d1c20ce/0a47e/3.png 600w,
+/static/a31402f4ff3d0bb002bdae567d1c20ce/2ad15/3.png 801w"
+        sizes="(max-width: 801px) 100vw, 801px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Ugh, still not working. Okay, whats next the article said it could also be an issue with a plugin so maybe that’s it?</p>
+<p>I’m sure there's a way to remove plugins from the ssh session but that sounds like it would be a nightmare. I need to somehow get access to my admin console so I can remove the plugins and see if that’s the problem. What I really needed was a time machine.</p>
+<h2>The Solution</h2>
+<p>And then it hit me. I’m hosting my blog on AWS Lightsail, and as a previous IT professional I was smart enough to set up daily snapshots of my server! I can make another instance using a snapshot from before I had the audacity to change the timezone! And then everything would be fine except for my most recent blog post. And sure I could save a copy and repost it, but due to certain restrictions, I need to keep the time stamp of that blog in place of when I posted it.</p>
+<p>So first things first, let's bust out the time machine</p>
+<p><img src="https://s.yimg.com/ny/api/res/1.2/6m3SbZNZSYuZDCiQYvAWvA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTMzMi44/https://s.yimg.com/uu/api/res/1.2/xJrv.9N6uxgzX0nPHryNhA--~B/aD0yNjA7dz01MDA7c209MTthcHBpZD15dGFjaHlvbg--/http://media.zenfs.com/en-US/homerun/uproxx_movies_881/7ca934d9e696271cf5f810d0d510bb5c"></p>
+<p>And by time machine, I mean the snapshots tab on Lightsail.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 781px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/b1865c3b77b50f935188fbf88198d348/7fee5/8.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 56.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsSAAALEgHS3X78AAABaElEQVQoz42TTU+EMBCG+b9evHnz4tVEb579P0ajMdGD2WWXpXxTykehQHmdlk3cNRiZZDJQmifvOzM4tZTIiwJJlkG2LaZpWpXjOGIYBqoaAz1PWsOE03UdwjgGYwH6vreHa4BVXUOUJRoSJITAqOQMbAkYJ4kFcs5XAU00jSRoY11VVQV9CgyiCO5uj713gFJqFbSsahRiVliS0jOFKfVvs9kiz/lqy7yskHIBQSqzQkB1zQ8wjGJs3R1Jr+2hpgbrfyyjI0UN3R/IkaSquyOQemAs+4zBDOg0pgW1lkVTvX474PJ5j6tXDxdPO9x/sBloLpnGBmFEGVrbNmlARukicBjx8Mlw++7hjvLmxcXjVzQDzS6Z8XsHH77PaAVKpGmGgvqyBLRpdk7ShLMELc8A1ZLl0X5zzO4VtEdZnkNKeW75r6UmYF1wiChAFYf2XQ0GqOHgVyxZXKqanOle0bp09q8Zj26+ARNJVsmyngDsAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="8"
+        title="8"
+        src="/static/b1865c3b77b50f935188fbf88198d348/7fee5/8.png"
+        srcset="/static/b1865c3b77b50f935188fbf88198d348/5a46d/8.png 300w,
+/static/b1865c3b77b50f935188fbf88198d348/0a47e/8.png 600w,
+/static/b1865c3b77b50f935188fbf88198d348/7fee5/8.png 781w"
+        sizes="(max-width: 781px) 100vw, 781px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>So I'll click on the date I want and create an instance from that snapshot. Once the instance is built, I’ll move my site’s IP over to the new instance. This should provide me with a replica of my site from a week ago that I can sign into that's only missing my most recent blog post.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 866px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/c653ea3b3291ff6c38ee6f2c0702d984/c1328/9.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 46.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsSAAALEgHS3X78AAABGklEQVQoz42SbU+DMBSF+TsyeS0FNza3yQYIAVxwzixRMxM1Jkad2Yct8b8f28qwJjj8cNLm5N7nvrSKZp7i2BiAn7o1qjQU3l5yTJuUfbBJzuD2Enh+CtqNYdhjph/4f2C/gBxg0wmIF8Lxou/zJILlBH8Cm3xFHqmj+1ArdfQ+VK0nPH7nEjFGv/L8Ok8GK3Il4kxrGWyX1I1hE9Y1DWvPIgEojeAwr7HDemRrjOtijZtyi6vsDcl0hbvLHebZK5YXG6FZ8ow8fkSZviCLHtqAIyzyNVbzTwb+wHK2wW25E+A0vBcA7hfnT6K42jYyBxasOu+Sa5G/YzgocaR16yS+Pzn5YIdih+xlbXcCkwbQ2HfhgENfpAn4BSRBLa/0CapfAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="9"
+        title="9"
+        src="/static/c653ea3b3291ff6c38ee6f2c0702d984/c1328/9.png"
+        srcset="/static/c653ea3b3291ff6c38ee6f2c0702d984/5a46d/9.png 300w,
+/static/c653ea3b3291ff6c38ee6f2c0702d984/0a47e/9.png 600w,
+/static/c653ea3b3291ff6c38ee6f2c0702d984/c1328/9.png 866w"
+        sizes="(max-width: 866px) 100vw, 866px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>And there we go! We've successfully traveled in time!</p>
+<p><img src="images/WelloffUnlawfulDarklingbeetle-size_restricted.gif" alt="steins gate divergence meter gif"></p>
+<p>Let’s just confirm I can also get to my admin console aaaaaand</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 692px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/7f1a5eb889a2aff2be03b342f996fa58/91e7e/10.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 82.33333333333334%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsSAAALEgHS3X78AAABfklEQVQ4y5WUT0+DMBjG+Xbe/SR+I0+LRw968eDdeDCazD8H4xJ1GzAKFFpKKeyxfRkLi2xjJE+etrS/PC9t8fI8xz5lWUauC7HT73xI3jEYtz79DcnFEdg/YH+yAxglcff+g/PJA66evqjPe3OG4F7/Zb+klGfQUuB2+o2Lm2dcPn5C2X43b1/53mCpQkBKudV0HiHLBZW8r6KDJWutURQFSSkFUyrypllbNSQhxDigoHQFVqsVGGNgcQw/CKltjEFVVVaGko8GarfILnYAU9eo64Zc62oLFEKeklBisVhSf5vKuVWuNJQ+NeEmidmkdO3SjgENUFdQZYliLNC5Kymy38wPAkQRswAN99zPGM6uXnD9EaLRio7WKGC3k53WaJ9ZWmLyGuItktCq2DnkB4GlTdR+/FbuGLkx1MZiLb4x9lzaNWNvCmMxlr6PxdLHfL5AkiQ0nnKOOOVtqW7+sZvSvYzjhEAO6tz3g8ENGL0p7V3m4JyTpzbVmF+X0x/AuMoIOSkvRQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="10"
+        title="10"
+        src="/static/7f1a5eb889a2aff2be03b342f996fa58/91e7e/10.png"
+        srcset="/static/7f1a5eb889a2aff2be03b342f996fa58/5a46d/10.png 300w,
+/static/7f1a5eb889a2aff2be03b342f996fa58/0a47e/10.png 600w,
+/static/7f1a5eb889a2aff2be03b342f996fa58/91e7e/10.png 692w"
+        sizes="(max-width: 692px) 100vw, 692px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Wooo!!!</p>
+<p>Okay now lets clear out all my plugins</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/e80fa52a72cb246440212f804e5544aa/1bba3/11.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 46.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsSAAALEgHS3X78AAABVUlEQVQoz42SyXLEIAxE/f/fmEtiz9iDWQRi8zLpCJxKZbnk8KqlghKNpGEcR7zcFoyrBZFHCOHfeO9hrIUxVnIGM2NYtcZqHO4uwHlGjLFTckb+RvnkytOlKSEJ7X7T9sBwp4i3h8HdELbzHRQzlCVQqnCxdCgmOE6wEodUwLmKXnjJ83ZgfwJFdJg9IYUV1imxreFElbrJAwqTNRiNlniBIy2FHbYaOvW7box9Z5SaMEwUcFMKVizv5wEKHsu6YnbUWQQrvWH5JkeGF0JTDh0SopzVY0eu9XLo7Qyl5+6OaJWePqSYkWIaioz0i35wueOufxy+WsYkE560u/oUojjWGDVhMh6vq8NsvTi5zhp5P1GO5x/StrcvR2guOACcguOIRVuokLEID58uJPZ5Q6o76vnsA/xBG8ouQ3Gyew3LbRVK36XAzX5FKeWL/Ctud3/TdvMDcPezExylzyMAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="11"
+        title="11"
+        src="/static/e80fa52a72cb246440212f804e5544aa/c1b63/11.png"
+        srcset="/static/e80fa52a72cb246440212f804e5544aa/5a46d/11.png 300w,
+/static/e80fa52a72cb246440212f804e5544aa/0a47e/11.png 600w,
+/static/e80fa52a72cb246440212f804e5544aa/c1b63/11.png 1200w,
+/static/e80fa52a72cb246440212f804e5544aa/1bba3/11.png 1433w"
+        sizes="(max-width: 1200px) 100vw, 1200px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Okay after deleting all plugins, I’ll head back over to my time settings and see if I can update it and then figure out how to get my most recent post back in somehow.</p>
+<p>Aaaaand?</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 801px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/a31402f4ff3d0bb002bdae567d1c20ce/2ad15/3.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 35%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsSAAALEgHS3X78AAABEklEQVQoz5WQTU7DMBCFcwrElh2LxHV+m+bXdpo4SUERP1IXLFlVgutwEi7AyR4ZB4d2g8Ti+UnjmW+e7Ww2IdI0R5JkCIIEYbhd3SqK0rVu73w/Bs1yHl3IoeLp9Ibj8QV5XkPrEYfDhK4bIGWLtu0xjvezD+j7u7k+YpoeIUQDxoILGLEcKkq5R1lKZFllGpVqZ3Woa2WgQuyNCEZLaZBEs4wtbtM6dLguh+f55tlFURswqSiEASyq1qX0BdQbxym2pGT3m9CSyel/KAklrCplnBLblORNo396OgilUakBohnMrAFamHVK+pdc6/Orrp4+cPP+hevXT9wmGj7jC/Ac+h+5uxFcPsMrH8D8FHxmfAMrrukkuaf2OgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="3"
+        title="3"
+        src="/static/a31402f4ff3d0bb002bdae567d1c20ce/2ad15/3.png"
+        srcset="/static/a31402f4ff3d0bb002bdae567d1c20ce/5a46d/3.png 300w,
+/static/a31402f4ff3d0bb002bdae567d1c20ce/0a47e/3.png 600w,
+/static/a31402f4ff3d0bb002bdae567d1c20ce/2ad15/3.png 801w"
+        sizes="(max-width: 801px) 100vw, 801px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Hmmm.</p>
+<p>Okay looks like I’m on my own on this one. But at least I know I can revert back to before the change!</p>
+<p>This means I might be able to grab a copy of my WordPress database from after the change which has my most current blog post and compare it with the database before the change. Maybe I can just input my new blogpost into the working config and worry about the timezone later??</p>
+<p>That seems like as fine a place to start as any, so that’s what I’ll do.</p>
+<h2>Dealing With Databases</h2>
+<p>Okay so jumping back to my current broken build, I’ll grab a copy of my WordPress DB via a MySQL dump.</p>
+<p><code>$ mysqldump -u mysqlusername -p databasename > ~/wpdb_backup.sql</code></p>
+<p>This command will make a copy of the database and save it to my home folder, where I can grab it off the server via an SFTP client, I use an app called Cyberduck for this.</p>
+<p>Now I just need to do the same thing with a snapshot instance from before the mistake! Then I can compare them and see what exactly the differences are.</p>
+<p>Once I have both .sql files on my computer I’ll open them in vs code. Right-click on one of the files in the Explorer and click ‘Select for Compare’. <span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 739px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/5c10c67ca7bbfc2192277b9975457d96/f1d1f/12.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 56.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsSAAALEgHS3X78AAACSElEQVQozzVSyXLUMBT0h+CxZcm7ZXlfYpOZymQ2pxKykCqgJglw4cJHABf46+ZZkxy6ZMl6re7Xz/g8vcewbVHXDbquQ1GWKF/R0r7rezRNQ/8rtCWhbdHT2Xx3Xquq0nfndYax3U+oigpKKVRUEIURAt9HEAQo0gx90yJNU8RRjCaQKIpCF+Z5romEELAtG4w5YLYDo+9aZHSp7gYkaY4wUfCjFG6YILAcqCBCKEOUbQ5ZSnihgGm/g+UsCCZsbsFxGRxhg/sMRl0XSJsNLq5/orr9gWr9gOHqC/rdI2TRwHY4VJFDeBwWM3WxzWwiYOAeqeK2hmmasKwFKTzryVqOIWuhyPLd/T2ev77g+HTEYb/F6rzH1XRByl3wwIEvBRExcuAgUC68RBA4GCm0mQWjoyYnUuqNzSMsP/3G4ds/TDO+/0Xz8Afq5he8vEMgGbxYgDknVbNC7jL9wLxfmKRwGAZquoLgAsINMG4esf3wjM3NE8pxQkLtUMMBLoXiCEuTnPrlaPszkfNKKsiBMY+BlCmlRZaoXxerc4xnlGwSIUtjpBTIbrdC1sTwJEdSB4hKD7INEFc+4tqnMx/pWQhF0AqVysBJoUOE68sNbu/uMQwjyqpG0za4+3gL1cbUM4G0CxHmniaLMp8eEXBjrns5qzTGcdQz+Ea42+1xPB6x3x+wXC5psFtM13samZgKT0G8ISo8HZIbcN3XxYJCmaf9zbJWuL7E4TAhpAGXFFYUR1itl6jGXBPGpa/VJc3J+vwtm5Pq+YH/GDJZm/swEWIAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="12"
+        title="12"
+        src="/static/5c10c67ca7bbfc2192277b9975457d96/f1d1f/12.png"
+        srcset="/static/5c10c67ca7bbfc2192277b9975457d96/5a46d/12.png 300w,
+/static/5c10c67ca7bbfc2192277b9975457d96/0a47e/12.png 600w,
+/static/5c10c67ca7bbfc2192277b9975457d96/f1d1f/12.png 739w"
+        sizes="(max-width: 739px) 100vw, 739px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Then right-click on the other file and click ‘Compare with Selected’</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 738px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/f8d9058f8a87fe0ab1de3c9ec41bba2c/774b6/13.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 64.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsSAAALEgHS3X78AAACmElEQVQ4y1VTyW4TQRT0XyAk27P0LD1Lz77bQSQORlHsEIhJ4ixScoAIib/gkhMXPrh4r4eAODw9dau7uupV9eTm9ADDuxZ11aDrOhRFibIcq6V13/domgZ1XaMtK7Rtq/f4bNd3qKpKn+XONVmfnKLMK6RpShs1giCE70v4UqJIUvRNC5UkCMMIjVQo8kJf5F7S467rwjBM2JaAZdqY9PRSludouh5xzBdjRJFCGMeIhYdURlCZQtUVUKWCF7iYW1MY9lyXKQzYjkVlQngWJk1dIKqOsTz5hnL3HfnmC8ThHV7V53ht2PS6gel8SiAzmDZddk3qJizBALbuXLPZjM7OMRmGDmG2hGo2cJdbFEdnOLl6xOr8BoerY3iei7otUfcFbM+EHzsQvgUnsCFTF14sqBxYxNC0DEx4uDHJs2wLFrEp6w77u0dc7u+xu7rF29UaH3efUfUN3NjWgMyIZTJDlsmd1/M5MVwsFlAqgeN4EEJArZ6wefqF1f0ztl9/Yv3wjOjsB5zFLWwxHWX+mReDWCTfdi1dwidTOAZKKQJ0CdBBWbW4vNrjYneJzfYDmUWm1SVUncBXAlHt08x9qFbqzuu4kUj6AOkQjAw5Mgxm20Lnbb1ej9EocsQqItlvsDjqtGS+GBaeBgsznx5x/s5RM1wul0goZwzIxcHebLYU5hZpliFJE6zeH2Fx2EFIUxsRZC5k4mpgBnSl0M4bc4NdHv6TnFNgLy522JERzLRpa5x92mJgwNBCVI4SY5KqmZYsP4CkR4Lce2H4TzL/luvrPX2xjsBzZEWG/qDFwfEAPxFaMstNhxDpIkTSjbMb94IxNsyQAZmllCHNsaH8+bSmMTgCMiBGSaR/hnb3xVWOjD92HXpy/zeLY5ZjGj4BKwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="13"
+        title="13"
+        src="/static/f8d9058f8a87fe0ab1de3c9ec41bba2c/774b6/13.png"
+        srcset="/static/f8d9058f8a87fe0ab1de3c9ec41bba2c/5a46d/13.png 300w,
+/static/f8d9058f8a87fe0ab1de3c9ec41bba2c/0a47e/13.png 600w,
+/static/f8d9058f8a87fe0ab1de3c9ec41bba2c/774b6/13.png 738w"
+        sizes="(max-width: 738px) 100vw, 738px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>This will allow you to see the differences between both files!</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/3866592425b99205532a3e07d1a496e3/476e1/14.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 39.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsSAAALEgHS3X78AAABj0lEQVQozy1R2Y7DIBDLdzTNAYQjJBByZ1u10v7/R3lNuw8WgjEej6d4vV8IMWLwA7Z1xTInxBi+mCKmacK1HziOg28RvfdED9c7eJ6e9xBGhDH/SSiO5cAZArwxsCT1YUCYR7hxgKdo7x2qpsa9LKFEC9NbcjyG6KEp5kcP1UncyjtEXaNIU4LpNIw2GLPLtOJxnti3HeuyYaarXFNNA9d1SNOMg44fPxcWcvJUw+AhWdNSUDAlSNV9RDc6fLPze3R4DAa7kdjYfSVxEwJTb7BcCddPxHlFpN0jzg4hOYyTZUQ9inmeoSioswutUMsGTYZqUbUcta5Q3u8oq4qNFUSuiZr4nhXf76zfbiWklChy6B3daYqezO13DXgFhydxef11SKGlbRDp8HxvuJ4TdrpcrhHT2iPQ2Rgtl2tRRC5ESkWHGs5aONOhY/eMnJtk0J+TTjRzMlyStnTKCVQnIMgTXFaGUsxwPZ+flefgtXMQzqKz+kP+jM4PNbecx1YUVKxLSy7jaf/rTfsdvWbzP6XX62mmNtRYAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="14"
+        title="14"
+        src="/static/3866592425b99205532a3e07d1a496e3/c1b63/14.png"
+        srcset="/static/3866592425b99205532a3e07d1a496e3/5a46d/14.png 300w,
+/static/3866592425b99205532a3e07d1a496e3/0a47e/14.png 600w,
+/static/3866592425b99205532a3e07d1a496e3/c1b63/14.png 1200w,
+/static/3866592425b99205532a3e07d1a496e3/d61c2/14.png 1800w,
+/static/3866592425b99205532a3e07d1a496e3/476e1/14.png 1841w"
+        sizes="(max-width: 1200px) 100vw, 1200px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>As you can see, each line that doesn’t match is clearly indicated by the red and green. And since I’m not sure which of these changes is causing my problem, I’m just going to grab the data for my newest post and move it over to the backup database so I can get my blog back up to date. Once I have that I can worry about figuring out what caused the problem at another time.</p>
+<p>I scrolled through the files and found 3 lines that I wanted to replace in the pre-mistake file. The two lines which were changed in regards to my posts, and then another line which indicated the tags on each post.</p>
+<p>I then Saved the file and used Cyberduck to put the file back onto the Lightsail server.</p>
+<p>From here I’m able to replace my SQL DB with the fixed file which is aptly named ‘fixed_file.sql’. I did so by running this command:</p>
+<p><code>$ mysql -u mysqlusername -p databasename &#x3C; fixed_file.sql</code></p>
+<p>After putting in my password, I rebooted the server and waited...</p>
+<p>Aaaaaaaand...</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 783px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/27d521383b8ffcf1cfe531e2db1f6215/e51a6/15.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 72.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAAsSAAALEgHS3X78AAACCElEQVQ4y5VUa28SURDl1xjksQ+WpQX2zS4vgQJLQR4trSlqa7VNfGvUxJj0Zx9nptBAqQ1+mMzO3HvPnJlz7yaymgM155H54jnOqPadrWL2u1hCMwLslZso2m0xY68KRacChk/e/S8wAWRmOTOEUYiQ36/BLNaXvgE9X9kJcH1PYr09McVGWrHEdmW3AbhKpFUGKYuXnGYjxfESWPZwIdW6259SSltzJoYWGuEJBq23OGy/Q695jlrlGK49wKhzjdCfoBrM0G28Rqf+Eu3aGdkCB/Q9pHWV5r3V8rB9hRfDn5h0P+DV5A8Wz38L2LT3UQ7GrUucT29wFH+hwpe4mN1IcS68JQoDOnaMKJiKZzbMihk6Vgyr3IVt9RH5U3jOIazSgXw7lMsZoYzhXss2NDOAViBFdUrmXCQz+2JPs0WxZKa4livhSbog+YfuqYii6j60XADdqMhMODbyVcr5woItq7nQac/tWiT7H7oFwpDncjr8gVn/Mw1+gRYNnuNe80LmOh98Rz2cI372Bs3oVOZdqxwhSSy50BZgh1SbD75h3H0vCh7HX+UQA7I4rDyvn41+IfTGclC5p+5Gy3wV+MAJMWFGs/4nEiXeaJnbNM2a5FZ3cf3dbzC0rC4pO0bgjhB4IwHjWaaWF/325ZQlziwv/r9+GgKomxXohVBUVg1PlHzs2T229hdRFgICwOakcAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="15"
+        title="15"
+        src="/static/27d521383b8ffcf1cfe531e2db1f6215/e51a6/15.png"
+        srcset="/static/27d521383b8ffcf1cfe531e2db1f6215/5a46d/15.png 300w,
+/static/27d521383b8ffcf1cfe531e2db1f6215/0a47e/15.png 600w,
+/static/27d521383b8ffcf1cfe531e2db1f6215/e51a6/15.png 783w"
+        sizes="(max-width: 783px) 100vw, 783px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Alright!! Okay and the moment of truth...</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 692px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/7f1a5eb889a2aff2be03b342f996fa58/91e7e/10.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 82.33333333333334%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsSAAALEgHS3X78AAABfklEQVQ4y5WUT0+DMBjG+Xbe/SR+I0+LRw968eDdeDCazD8H4xJ1GzAKFFpKKeyxfRkLi2xjJE+etrS/PC9t8fI8xz5lWUauC7HT73xI3jEYtz79DcnFEdg/YH+yAxglcff+g/PJA66evqjPe3OG4F7/Zb+klGfQUuB2+o2Lm2dcPn5C2X43b1/53mCpQkBKudV0HiHLBZW8r6KDJWutURQFSSkFUyrypllbNSQhxDigoHQFVqsVGGNgcQw/CKltjEFVVVaGko8GarfILnYAU9eo64Zc62oLFEKeklBisVhSf5vKuVWuNJQ+NeEmidmkdO3SjgENUFdQZYliLNC5Kymy38wPAkQRswAN99zPGM6uXnD9EaLRio7WKGC3k53WaJ9ZWmLyGuItktCq2DnkB4GlTdR+/FbuGLkx1MZiLb4x9lzaNWNvCmMxlr6PxdLHfL5AkiQ0nnKOOOVtqW7+sZvSvYzjhEAO6tz3g8ENGL0p7V3m4JyTpzbVmF+X0x/AuMoIOSkvRQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="10"
+        title="10"
+        src="/static/7f1a5eb889a2aff2be03b342f996fa58/91e7e/10.png"
+        srcset="/static/7f1a5eb889a2aff2be03b342f996fa58/5a46d/10.png 300w,
+/static/7f1a5eb889a2aff2be03b342f996fa58/0a47e/10.png 600w,
+/static/7f1a5eb889a2aff2be03b342f996fa58/91e7e/10.png 692w"
+        sizes="(max-width: 692px) 100vw, 692px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>WOOOOOOOOO!!!!</p>
+<p>Mission successful!!</p>
+<p>If you’ve made it this far, the best advice I can give you is to ALWAYS MAKE SURE YOU HAVE BACKUPS!</p>
+<p>Unfortunately, Flux Capacitors don't exist. Backups are <em>actually</em> what makes time travel possible. <img src="https://o.aolcdn.com/images/dims?thumbnail=640%2C&#x26;quality=95&#x26;image_uri=https%3A%2F%2Fs.yimg.com%2Fuu%2Fapi%2Fres%2F1.2%2F0CnYpF_JwhUPIQE2Uq8s3A--%7EB%2FaD03MjA7dz0xMjE3O2FwcGlkPXl0YWNoeW9u%2Fhttps%3A%2F%2Fo.aolcdn.com%2Fhss%2Fstorage%2Fmidas%2Fbd23aa5c2ffbcad2e929d58797eaef45%2F206410814%2Fflux-ed.jpg&#x26;client=amp-blogside-v2&#x26;signature=131b44e4334cbe19c71e80e8a355d84943740118"></p>
+<p>Seriously, if I hadn’t set up my server to take daily snapshots, there’s really no way I would have been able to get my site back myself. But luckily, I did! Make sure you do too, or else you’ll probably end up regretting it!</p></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/posts/how-time-travel-saved-my-wordpress-site";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-72546b9ca477f57c2f2e.js"],"app":["/app-10b6f47e5429585ae360.js"],"component---src-pages-index-js":["/component---src-pages-index-js-9b510899e4283203f3a3.js"],"component---src-templates-post-js":["/component---src-templates-post-js-0ec6894045e055c72fc7.js"]};/*]]>*/</script><script src="/polyfill-72546b9ca477f57c2f2e.js" nomodule=""></script><script src="/component---src-templates-post-js-0ec6894045e055c72fc7.js" async=""></script><script src="/app-10b6f47e5429585ae360.js" async=""></script><script src="/framework-acb96471af32e2ccbc9d.js" async=""></script><script src="/webpack-runtime-6b3b87391c7a86b77c10.js" async=""></script></body></html>
