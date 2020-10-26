@@ -5,6 +5,7 @@
  */
 
 module.exports = {
+  pathPrefix: "/Technicode.io",
   /* Your site config here */
   plugins: [
     'gatsby-plugin-sharp',
