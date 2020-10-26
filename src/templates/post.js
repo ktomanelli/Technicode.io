@@ -3,11 +3,15 @@ import {graphql} from 'gatsby'
 
 export default function Post({data}){
     const post = data.markdownRemark
-    const date = (Date.parse(post.frontmatter.date))
+    const formatDate = (val)=>{
+        const date = new Date(Date.parse(val))
+        date.setHours(date.getHours() + 4);
+        return date
+    }
+    const date = formatDate(post.frontmatter.date)
     return<div>
         <h1>{post.frontmatter.title}</h1>
-        {console.log(date)}
-        {/* <p>{date.toDateString()}</p> */}
+        <p>{date.toDateString()}</p>
         <div dangerouslySetInnerHTML={{__html:post.html}}/>
     </div>
 }
