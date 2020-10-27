@@ -3,6 +3,7 @@ title: "Building A Gastby Blog Site with Markdown Content"
 date: "2020-10-25"
 ---
 
+![gatsby logo](images/gatsby.png)  
 In my last blog post I walked through how to convert a WordPress export to markdown. In this post I'll be using those markdown files along with Gatsby to rebuild Technicode.io.
 
 So let's get started.

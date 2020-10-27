@@ -23,3 +23,58 @@ exports.createPages = async({actions,graphql})=>{
         })
     })
 }
+
+
+// const colorText=[
+// //red
+// 'to',
+// 'over',
+// 'on',
+// 'from',
+// 'of',
+// 'by',
+// 'at',
+// 'up',
+// 'with',
+// 'for',
+// 'as',
+// 'like',
+// 'for',
+// 'round',
+// 'about',
+// 'via',
+// 'along',
+// 'out',
+// 'in',
+// 'between',
+// 'off',
+// //blue
+// 'and',
+// 'where',
+// 'because',
+// 'that',
+// 'so',
+// 'if',
+// 'but',
+// //green
+// 'this',
+// 'all',
+// 'i',
+// 'us',
+// 'we',
+// 'which',
+// 'these',
+// 'they',
+// 'each',
+// 'it',
+// 'you',
+// 'any',
+// 'what',
+// ]
+
+// const getColor=(i)=>{
+// console.log('inside getColor')
+// if(i<=20)return 'red'
+// else if(i<=27) return 'blue'
+// else return 'green'
+// }
