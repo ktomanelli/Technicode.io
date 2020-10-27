@@ -21,7 +21,8 @@ a{
 `
 
 export default function Home({data}) {
-  const posts = data.allMarkdownRemark.nodes.sort()
+  const posts = data.allMarkdownRemark.nodes.sort((a,b)=>
+    Date.parse(b.frontmatter.date)-Date.parse(a.frontmatter.date))
   const formatDate = (val)=>{
     const date = new Date(Date.parse(val))
     date.setHours(date.getHours() + 4);
