@@ -27,7 +27,7 @@ This will build a new Gatsby project in your current directory. Once the build c
 
 ![terminal displaying server running](images/1.png)
 
-Once your terminal indicates that your server is live at 'http://localhost:8000', you can check everything is working by opening your browser and going to the the site.
+Once your terminal indicates that your server is live at `http://localhost:8000`, you can check everything is working by opening your browser and going to the the site.
 
 ![gatsby site displaying 'hello world'](images/2.png)
 
@@ -131,7 +131,7 @@ plugins: [
 
 So now that our plugins are all set, we'll have to set up a GraphQL query to pull our data from the source files to access them in the React components.
 
-Now in order to help build our query, gatsby provides us with a tool called Graphiql, which is accessible at 'http://localhost:8000/\_\_\_qraphql' by default. You may have seen this url when you first started your gatsby app.
+Now in order to help build our query, gatsby provides us with a tool called Graphiql, which is accessible at `http://localhost:8000/___qraphql` by default. You may have seen this url when you first started your gatsby app.
 
 ![terminal displaying gatsby server running with graphiql url circled](images/3.png)
 

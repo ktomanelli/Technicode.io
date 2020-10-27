@@ -8,6 +8,9 @@ const StyledPost = styled.div`
     margin-left:25vw;
     color:white;
     width:65%;
+    code{
+        background-color:#363948;
+    }
 `
 
 
