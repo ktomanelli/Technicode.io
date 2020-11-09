@@ -25,7 +25,7 @@ export default function Home({data}) {
     Date.parse(b.frontmatter.date)-Date.parse(a.frontmatter.date))
   const formatDate = (val)=>{
     const date = new Date(Date.parse(val))
-    date.setHours(date.getHours() + 4);
+    date.setHours(date.getHours() + 5);
   return date
   }
   return <>
