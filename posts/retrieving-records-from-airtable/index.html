@@ -1,0 +1,211 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 2.24.79"/><style data-styled="" data-styled-version="5.2.0">body{background-color:#282a36;width:80vw;font-family:'Space Mono';}/*!sc*/
+h4{color:#8694b1;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+a{-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+a{color:#bd96f0;}/*!sc*/
+a:hover{color:#282a36;background-color:#bd96f0;}/*!sc*/
+img{width:100%;height:auto;}/*!sc*/
+data-styled.g1[id="sc-global-fHsaqC1"]{content:"sc-global-fHsaqC1,"}/*!sc*/
+.EzSst{padding:1rem;margin-left:25vw;color:white;width:65%;}/*!sc*/
+.EzSst code{background-color:#363948;}/*!sc*/
+data-styled.g4[id="post__StyledPost-sc-130zpan-0"]{content:"EzSst,"}/*!sc*/
+</style><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/google-fonts/s/spacemono/v6/i7dMIFZifjKcF5UAWdDRaPpZUFWaHg.woff2"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/google-fonts/s/spacemono/v6/i7dPIFZifjKcF5UAWdDRYEF8RQ.woff2"/><style type="text/css">@font-face{font-family:'Space Mono';font-style:normal;font-weight:400;src:local('Space Mono'),local('SpaceMono-Regular'),url(/google-fonts/s/spacemono/v6/i7dPIFZifjKcF5UAWdDRYEF8RQ.woff2) format('woff2'),url(/google-fonts/s/spacemono/v6/i7dPIFZifjKcF5UAWdDRYEF8Qw.woff) format('woff');font-display: swap;}@font-face{font-family:'Space Mono';font-style:normal;font-weight:700;src:local('Space Mono Bold'),local('SpaceMono-Bold'),url(/google-fonts/s/spacemono/v6/i7dMIFZifjKcF5UAWdDRaPpZUFWaHg.woff2) format('woff2'),url(/google-fonts/s/spacemono/v6/i7dMIFZifjKcF5UAWdDRaPpZUFWaGA.woff) format('woff');font-display: swap;}</style><link as="script" rel="preload" href="/webpack-runtime-9ba3d4953038f13ac4c6.js"/><link as="script" rel="preload" href="/framework-256fdde5199f9087be1b.js"/><link as="script" rel="preload" href="/app-8a286143b40e5b6c2ec4.js"/><link as="script" rel="preload" href="/commons-865c6a758ed7e2eabd99.js"/><link as="script" rel="preload" href="/component---src-templates-post-js-2e551a17ad0a31f82dae.js"/><link as="fetch" rel="preload" href="/page-data/posts/retrieving-records-from-airtable/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><a href="/"><h4>// Technicode.io</h4></a><h4>// All things Tech and Code</h4><div class="post__StyledPost-sc-130zpan-0 EzSst"><h1>Retrieving Records From Airtable</h1><p>Sat Nov 21 2020</p><div><p>I'm currently working with a team of volunteers on a project designed to be a sort of local community bulletin board for volunteer groups around Astoria NY. This site will mainly be used to list open roles for the various groups in the community, and in order keep data management simple and user friendly, we'll be using Airtable to house all the listing data. Another perk of using Airtable is that it provides you with the ability to make 'form views' which make adding new data to the sheet much easier/user friendly. They also allow you to embed the form into an external website which means there'll be no need to build out post functionality on the backend to for adding new data to the sheet, all of this will be handled by the form embed.</p>
+<p>So this project as of right now is looking like a gatsby front end and a small node backend. I'll just be focusing on the backend in this blog, particularly airtable integration and using it to retrieve records from a table.</p>
+<p>Let's get started.</p>
+<h1>Environment Variables</h1>
+<p>So to get started let's go over the env variables we'll need to grab before we can make use of the Airtable API.</p>
+<h3>1.) AirTable API Key</h3>
+<p>You'll be able to grab this key from <a href="https://airtable.com/account">https://airtable.com/account</a>.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/7c62b3d839ff3b00a6771dc46bbd5bcb/7f7f8/1.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 55.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAABfklEQVQoz31TW1LDMAzM/U/COfjjAsAPA+2U5u2348ROvMhuk7ZQqhnlITvr3ZVSKFFjf9ijaRqkiDHiXqT6uhav9sVlwTRNCCFgnmcUYwDMeAti3YhD06HtOlRVhbZtz6BnoDvgaxZSGeyPLRjjGEeXN82KYXx7AetalGUJKQWWZV4/x3p8JFaYRmynURRuGMD6DtbaTD+Xyw/g+Ql9y3HsFHphIYyHtDNcyDoRB3NKknnNsrCWABmDUgre+03Gcs6LrNN7nOlqNckIN/6uUSzEKhmaMj2n8KPHV7PDK3uH00OWGwggkDwvGDw1wROzQAQ2L1fJvzuZYiAbqrpCWZXZw6aus8eOkTWkJK0Pg4Vz7i/gdYfW4hQ8GupsRUCcCzAhIKlBhrxe/hmpTfK9hWAUVPUN3daYjQScBSRDpDqIGSw1g+TfzOMjyV5wKK6glYWWBlobKGNhKKVUeSIyaLyM0EOGvhfgnx34jsEcJSzTUJSDON2D1rnT8c6f9QOXxFwpRq9P1QAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="airtable api key"
+        title="airtable api key"
+        src="/static/7c62b3d839ff3b00a6771dc46bbd5bcb/c1b63/1.png"
+        srcset="/static/7c62b3d839ff3b00a6771dc46bbd5bcb/5a46d/1.png 300w,
+/static/7c62b3d839ff3b00a6771dc46bbd5bcb/0a47e/1.png 600w,
+/static/7c62b3d839ff3b00a6771dc46bbd5bcb/c1b63/1.png 1200w,
+/static/7c62b3d839ff3b00a6771dc46bbd5bcb/d61c2/1.png 1800w,
+/static/7c62b3d839ff3b00a6771dc46bbd5bcb/7f7f8/1.png 2396w"
+        sizes="(max-width: 1200px) 100vw, 1200px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<h3>2.) AirTable Base ID</h3>
+<p>You'll also need the unique id for the Airtable base you're trying to work with. You can get your base ID by going to <a href="https://airtable.com/api">https://airtable.com/api</a> and then clicking on the relevant base. Your base id will be displayed on the page.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/5aee60b4164433d842b4cc11cd407237/928ed/2.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 40%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABYlAAAWJQFJUiTwAAABYklEQVQoz5VSC0rDQBTMUYRKRVH6iW39ldYqeBkpVUHEI3gWvYEH0QrS/JPd/PtJSWzGt4EGREF9MDx2ecybmV0pGz8g9GxEoYfpNEYcx8iyDHmeY7ValRBn3w9g2TYYY7Btp4Q4KwbHu8ogzcZPmL0+YjF5xny+INJpQfBT3d7doyF3cHp+gaOTHo67/aJ3ewMM6K7bP4MURwGiwMVHtoTGFLxpL7CYSVs5GOfg3IVhGeCRg8vhCBuVKmrNFvbqcondWrOEFJOiJFmSJYC5jCyZcBwbYeCjWBaGZNVHmqUYjq6xubUDuX2Iutz+gsZ+p+iSyEZUTjZFHqqqQjNMTCwfihNBd0JYplnkOry6QaW6jWbr4BvhGtI6H5FbSGo8z0PMbMSGjsTlyJKE1GXFjFD4K+FaoSB0KTOHXsynzEJdQaBN4JN97rpI0/T/hDZ9CV3XybJR2Fapq5pW3Iu5vxB+AiKb2riKYR/MAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="airtable base id"
+        title="airtable base id"
+        src="/static/5aee60b4164433d842b4cc11cd407237/c1b63/2.png"
+        srcset="/static/5aee60b4164433d842b4cc11cd407237/5a46d/2.png 300w,
+/static/5aee60b4164433d842b4cc11cd407237/0a47e/2.png 600w,
+/static/5aee60b4164433d842b4cc11cd407237/c1b63/2.png 1200w,
+/static/5aee60b4164433d842b4cc11cd407237/d61c2/2.png 1800w,
+/static/5aee60b4164433d842b4cc11cd407237/97a96/2.png 2400w,
+/static/5aee60b4164433d842b4cc11cd407237/928ed/2.png 2552w"
+        sizes="(max-width: 1200px) 100vw, 1200px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Great! Now you'll want to export those keys in your terminal or make a .env file and keep them there.</p>
+<h1>Airtable API</h1>
+<p>Okay so now lets run <code>npm init</code> to initialize our node project, and once that's done, we'll have to install 'airtable' and 'express'.</p>
+<p><code>npm i airtable express</code></p>
+<p>Once that's complete lets make a JS file and open it in our editor.</p>
+<p>Now lets start by requiring the airtable package.</p>
+<pre><code>const Airtable = require('airtable');
+</code></pre>
+<p>Next we'll declare a new Airtable object and pass in our API key as well as our base id. We can do so like this:</p>
+<pre><code>const Airtable = require('airtable');
+
+const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(
+  process.env.AIRTABLE_BASE_ID
+);
+</code></pre>
+<p>Next we'll need to grab our table name. You can get this by just going to your Airtable base and seeing what the tab at the top is named.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/8920fc2c1497678f6da9b6803a39afe8/2d912/3.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 14.666666666666666%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAy0lEQVQI12WLsU7CUBSGL4OJi7OGRxCriZGY+HYSxUB0wg2BRomDL8HoI0DpaNvQcHvb3tLqYPJxakeHL//5vz9H+aMT1k9HeMMD1j2Fd/uf1Z1i2W9YDVrUP/7oGP+5jfd4yPJe/EOzq837DXrxgvn8IJpcE0xPCd1zweFr2iGYOURjh3Ai3e0Qvl4Qzq8I5l3JLtHbpfizPyLZVJ6lJNoQ21/iraYoMqpqR1kWGKOxNsOKqzPRW8pdgc1TslS23Ei3chtSk/DzXbEHcEuzn3P/87wAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="airtable table name"
+        title="airtable table name"
+        src="/static/8920fc2c1497678f6da9b6803a39afe8/c1b63/3.png"
+        srcset="/static/8920fc2c1497678f6da9b6803a39afe8/5a46d/3.png 300w,
+/static/8920fc2c1497678f6da9b6803a39afe8/0a47e/3.png 600w,
+/static/8920fc2c1497678f6da9b6803a39afe8/c1b63/3.png 1200w,
+/static/8920fc2c1497678f6da9b6803a39afe8/2d912/3.png 1772w"
+        sizes="(max-width: 1200px) 100vw, 1200px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Mine is named 'Roles'.</p>
+<p>So we'll call .table() on base and pass in our table name:</p>
+<pre><code>base.table('Roles')
+</code></pre>
+<p>Be aware that the table name is case sensitive!</p>
+<p>Next we'll call .select() and here we'll be passing in an object. This object can have a number of optional key-value pairs, of which you can read more about <a href="https://airtable.com/api">here</a> but one that will be required for us will be the 'view' key-value pair.</p>
+<p>This tells airtable what view we'd like to focus on. By default your airtable should have a view called 'Grid view'. This is what I'll be using as my view value.</p>
+<pre><code>    base
+      .table('Roles')
+      .select({
+        view: 'Grid view',
+      })
+</code></pre>
+<p>Now that we have the correct table and view, we can call the .all() method and this will return all the records in this table.</p>
+<p>This is certainly useful, but I think I'll only need the records that meet certain criteria. We have two collumns in the table that I'd like to check before returning the results of the .all() call. And I could certainly use a .filter() to sift through any records I won't need but a cleaner way to filter with Airtable is to use a filterByFormula.</p>
+<p>A filterByFormula is an optional key-value pair that we can add to our .select object which will filter the returned records according to a formula we pass in. This way we'll only receive records that pass through the formula. You can read up on filterByFormula <a href="https://support.airtable.com/hc/en-us/articles/203255215-Formula-Field-Reference">here</a>.</p>
+<p>The formula I'll be using will be checking that a record has a 'Status' of 'open' and a 'Is it approved?' of '1'. The 'Status' and 'Is it approved?' correspond to collumns in the table and the 'open' and '1' are the values we want our returned records to have. So my code will look like this:</p>
+<pre><code>  base
+    .table(process.env.AIRTABLE_TABLE_NAME)
+    .select({
+      view: 'Grid view',
+      filterByFormula: "AND({Status} = 'open',{Is it approved?} = '1')",
+    })
+    .all();
+</code></pre>
+<p>We can confirm this is working by wrapping the code in a function and awaiting the results of the code which returns a promise:</p>
+<pre><code>const getOpenRoles = () =>
+  base
+    .table(process.env.AIRTABLE_TABLE_NAME)
+    .select({
+      view: 'Grid view',
+      filterByFormula: "AND({Status} = 'open',{Is it approved?} = '1')",
+    })
+    .all();
+
+const test = async () => {
+  console.log(await getOpenRoles());
+};
+test();
+</code></pre>
+<p>This will log all the relevant records to the console.</p>
+<p>Let's get rid of the test function and the test call and instead add a module.exports statment and set it equal to our getOpenRoles function. Our final code should look like this:</p>
+<pre><code>const Airtable = require('airtable');
+
+const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(
+  process.env.AIRTABLE_BASE_ID
+);
+
+const getOpenRoles = () =>
+  base
+    .table(process.env.AIRTABLE_TABLE_NAME)
+    .select({
+      view: 'Grid view',
+      filterByFormula: "AND({Status} = 'open',{Is it approved?} = '1')",
+    })
+    .all();
+
+module.exports = { getOpenRoles };
+</code></pre>
+<p>Now we'll be able to call this function from other files.</p>
+<h1>Express</h1>
+<p>Let's make another file called 'http.js'</p>
+<p>in this file, we'll set a var, express, to require('express'), and another variable, app, equal to express(). We'll also destructure out getOpenRoles function from 'airtable.js'</p>
+<pre><code>const express = require('express');
+const { getOpenRoles } = require('./airtable');
+
+const app = express();
+</code></pre>
+<p>From here we'll just need to make our route and tell express what port we want it to listen on. So to make our route, we'll do app.get() and pass in our desired url,'/api/getOpen', and a function we want to run when someone hits the url. For this instance we'll be using an async function which will return the awaited response from our getOpenRoles function.</p>
+<p>We'll then call app.listen() and pass in 3000.</p>
+<p>The file should now look like this:</p>
+<pre><code>const express = require('express');
+const { getOpenRoles } = require('./airtable');
+
+const app = express();
+
+app.get('/api/getOpen', async (req, res) => {
+  res.json(await getOpenRoles());
+});
+
+app.listen(3000);
+</code></pre>
+<p>And this is it, now if we run our http.js</p></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/posts/retrieving-records-from-airtable";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-177f0ce798b672df6e51.js"],"app":["/app-8a286143b40e5b6c2ec4.js"],"component---src-pages-index-js":["/component---src-pages-index-js-426671a7be08568aa1e5.js"],"component---src-templates-post-js":["/component---src-templates-post-js-2e551a17ad0a31f82dae.js"]};/*]]>*/</script><script src="/polyfill-177f0ce798b672df6e51.js" nomodule=""></script><script src="/component---src-templates-post-js-2e551a17ad0a31f82dae.js" async=""></script><script src="/commons-865c6a758ed7e2eabd99.js" async=""></script><script src="/app-8a286143b40e5b6c2ec4.js" async=""></script><script src="/framework-256fdde5199f9087be1b.js" async=""></script><script src="/webpack-runtime-9ba3d4953038f13ac4c6.js" async=""></script></body></html>
