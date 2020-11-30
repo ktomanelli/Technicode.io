@@ -171,4 +171,4 @@ app.get('/api/getOpen', async (req, res) => {
 app.listen(3000);
 ```
 
-And this is it, now if we run our http.js
+And this is it, now if we run our http.js and go to localhost:3000/api/getOpen, we'll receive a json object containing all the records that are approved and have a status of open. We can now leverage this api with our Gatsby frontend to display this data neatly on the page.
