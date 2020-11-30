@@ -1,0 +1,529 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 2.24.79"/><style data-styled="" data-styled-version="5.2.0">body{background-color:#282a36;width:80vw;font-family:'Space Mono';}/*!sc*/
+h4{color:#8694b1;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+a{-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+a{color:#bd96f0;}/*!sc*/
+a:hover{color:#282a36;background-color:#bd96f0;}/*!sc*/
+img{width:100%;height:auto;}/*!sc*/
+data-styled.g1[id="sc-global-fHsaqC1"]{content:"sc-global-fHsaqC1,"}/*!sc*/
+.EzSst{padding:1rem;margin-left:25vw;color:white;width:65%;}/*!sc*/
+.EzSst code{background-color:#363948;}/*!sc*/
+data-styled.g4[id="post__StyledPost-sc-130zpan-0"]{content:"EzSst,"}/*!sc*/
+</style><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/google-fonts/s/spacemono/v6/i7dMIFZifjKcF5UAWdDRaPpZUFWaHg.woff2"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/google-fonts/s/spacemono/v6/i7dPIFZifjKcF5UAWdDRYEF8RQ.woff2"/><style type="text/css">@font-face{font-family:'Space Mono';font-style:normal;font-weight:400;src:local('Space Mono'),local('SpaceMono-Regular'),url(/google-fonts/s/spacemono/v6/i7dPIFZifjKcF5UAWdDRYEF8RQ.woff2) format('woff2'),url(/google-fonts/s/spacemono/v6/i7dPIFZifjKcF5UAWdDRYEF8Qw.woff) format('woff');font-display: swap;}@font-face{font-family:'Space Mono';font-style:normal;font-weight:700;src:local('Space Mono Bold'),local('SpaceMono-Bold'),url(/google-fonts/s/spacemono/v6/i7dMIFZifjKcF5UAWdDRaPpZUFWaHg.woff2) format('woff2'),url(/google-fonts/s/spacemono/v6/i7dMIFZifjKcF5UAWdDRaPpZUFWaGA.woff) format('woff');font-display: swap;}</style><link as="script" rel="preload" href="/webpack-runtime-9ba3d4953038f13ac4c6.js"/><link as="script" rel="preload" href="/framework-256fdde5199f9087be1b.js"/><link as="script" rel="preload" href="/app-8a286143b40e5b6c2ec4.js"/><link as="script" rel="preload" href="/commons-865c6a758ed7e2eabd99.js"/><link as="script" rel="preload" href="/component---src-templates-post-js-2e551a17ad0a31f82dae.js"/><link as="fetch" rel="preload" href="/page-data/posts/slack:-making-a-simple-bot/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><a href="/"><h4>// Technicode.io</h4></a><h4>// All things Tech and Code</h4><div class="post__StyledPost-sc-130zpan-0 EzSst"><h1>Slack: Making a Simple Bot</h1><p>Sat Nov 28 2020</p><div><p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 598px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/0527f364cc61d400815a7fc9d0000b98/0c69d/main.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 29.000000000000004%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsSAAALEgHS3X78AAABg0lEQVQY01WRuy+zYRjGO6O+qsPXCIkBkTgvpEra6nt+W1VC6EEijqUSEiQOabuRMjBITMRgMkgMhEG+5fsTTDaj2So/z/vEwHDnunLnfn65nvt2WTUWZq2No1aVge0xsWqFF73o3xiG10St1DCrTdmz6yx0b5RQ+QjBshiKJyrnzRpblkvCxLBRnyC4dEJgdl4+VCtVptuS5KcLbMW2SXekibh1xhotbrY6udvr5L7YxWFiAPUb6pTL+gYOr1/Rf/qA/2CF8GSKuC/O3sQ++ak8u+O75MI5bF+CdLPCy3U3b3cNvN/7eBTQYHlMJpdAJ6EtzFHLDJetGW53/JxlA8z0LlLKligkixJ4vFpiYXCTgtbD58sar//O+HjyiqTdhCp+AJ2EhjCTYnc3TXHOM0OM+jRS7RlWQznWtQ3m+ubJDmVZ8K+QbB7mtpjg/8UyzwdtbATC8su/EjoHMYTqjhdNo9pG8+hEKhQUt4oi9hmRqqBViYOU6ajuEGGRLPLn91G+AJxe5I9SoBPnAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="title logo"
+        title="title logo"
+        src="/static/0527f364cc61d400815a7fc9d0000b98/0c69d/main.png"
+        srcset="/static/0527f364cc61d400815a7fc9d0000b98/5a46d/main.png 300w,
+/static/0527f364cc61d400815a7fc9d0000b98/0c69d/main.png 598w"
+        sizes="(max-width: 598px) 100vw, 598px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Slack has become an absolute necessity in the professional environment as well as for smaller non-professional groups. The convenience of having everyone in your organization in one place makes communication infinitely easier. And no matter what kind of slack group you may find yourself in, you'll probably end up making use of one of the hundreds if not thousands of Slack apps which serve to extend slack's functionality. There are Slack apps for Zoom, Github, Zapier, you name it. But when it comes to some of these tools they're not always as flexible as one might desire.</p>
+<p>With this post I'll be starting a new blog series on the Slack API and how it can be leveraged to build your own useful and intuitive apps that make your slack channels a bit more lively. To start, I'll go over getting an app set up and having it send messages to a channel.</p>
+<p>Lets get started!</p>
+<h2>Slack App Setup</h2>
+<p>So, first you'll need a Slack workspace to develop and test in. You can create one <a href="https://slack.com/get-started#/create">here</a>. You'll need to put in your email, a verification code and then name your group.</p>
+<p>Once you have your slack workspace up and running, we'll head over to <a href="https://api.slack.com/apps">https://api.slack.com/apps</a> and click 'Create an App'. You'll have to give your app a name and select your workspace from the dropdown. Since this blog is just about the basics of getting set up I think we'll make a cat bot that meows every so often, so I'll name my app 'Cat'.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1156px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/d4ebb44051082bcdcafeb5e88b5f4b40/9937c/1.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 52%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsSAAALEgHS3X78AAABT0lEQVQoz32SyU7DQBBE/f//wJEP4YKExAmQgg8mSuIlSmK8j2NnJkVXmwnBLJbKs/ab7poJNvEazy9P2O12GMcRp9MJSZIgiiIsFgttsyxDmqY/VBQFuq5D0zRI4gTxJkbQy0RnDIyIQGq1WiEMQ4WxX5alBl/rcDhojLVWkxiGQRXw585nHXhgnudo2xb+O8v6tfh5iHPum4Lj8SiLFqbvYWUTgU3dqKqqUrEszvsgQsdhBGM5ZpZeCrTWYQJPHmb7DGvxdptt1c9eDvOBvuXcHPiVITco2EoZo5Rboq6pWsUM6RdbWmH6yXNf8q/AKcOp5PeyRlFWCuOFeHAtt9mZ8eLt/xlKCYTx1NZIX+Bzf5x4vc73uHm8w/0yBOxs3QPZYXacJNR8PiOWeJGMW8kySje4FeDD2yvg/gB6kF9glt70ufgSprcErez6sqgPSugF9aYbPlgAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="creating my app"
+        title="creating my app"
+        src="/static/d4ebb44051082bcdcafeb5e88b5f4b40/9937c/1.png"
+        srcset="/static/d4ebb44051082bcdcafeb5e88b5f4b40/5a46d/1.png 300w,
+/static/d4ebb44051082bcdcafeb5e88b5f4b40/0a47e/1.png 600w,
+/static/d4ebb44051082bcdcafeb5e88b5f4b40/9937c/1.png 1156w"
+        sizes="(max-width: 1156px) 100vw, 1156px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Once the app is created, you should be at this screen:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1159px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/e9b749f3d2790df57ab9c91061dc6b06/1d553/2.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 52%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsSAAALEgHS3X78AAABeklEQVQoz3WSyW7DMAxE/f8/0WP/oedeeirSNiiKIt4dJ3bkfU/sqYaIjHQTMJAMUeTj0FYQ+nh9e8HxmGAYRlwuFyzLIuq6TtT3/bobNU2DoijQNi3qqkYYhIjCCFZdllB5iaHvAMw6sEYQBAjDEL7vI4oiXWj4pZ9F2rYVWb1O5Mcptp8uDnmDrKiw3+9FcRzjcDjIw2macD6fV43j+Gcha9QJn9593D084/7xA25Soi4L2LYtpExK0jzPxQ4m5k6RzNAaWcRkcOB7yDOlH4zij1IKaZridDrJmeKZ8aS7TfiNkAFZloln3E3FUnvb6sT0tKoq+Z7nGVzLvEjb/yZMkgSO46Cua2lJaRLHdeEFkSjQE4z3sZAzZhx+E64tm/G7OgEnynY4KKVpU5VD6SFxDdepmmUIb7US0h97ZwspCVnE3u3g6MGctI98vN1usdlsxEc+5GIsAXhvKC36w6TcKVKYIGq6BtNDdsIBEoB/ADsihOd5cse4LzBZ/Muvj4R1AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Slack app dashboard"
+        title="Slack app dashboard"
+        src="/static/e9b749f3d2790df57ab9c91061dc6b06/1d553/2.png"
+        srcset="/static/e9b749f3d2790df57ab9c91061dc6b06/5a46d/2.png 300w,
+/static/e9b749f3d2790df57ab9c91061dc6b06/0a47e/2.png 600w,
+/static/e9b749f3d2790df57ab9c91061dc6b06/1d553/2.png 1159w"
+        sizes="(max-width: 1159px) 100vw, 1159px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Now that the app is created, we'll need to give it the correct permissions for what we want to be able to do. So let's scroll down to the section labelled 'Add features and functionality' and click 'Bots'.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 561px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/47937fcb354a9d2cfe73515b9c94e94f/410f3/3.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 95.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAAAsSAAALEgHS3X78AAAC4klEQVQ4y31U2ZKaQBT1//8iP5DHvKSSVFIzOurEvdwQN0RBQBBwwYWTe3oKdJypdNWhG/py+5y7dOF6vcJxHLiui+12i8APEEWRrEN4nqfWvu8jCALYto3j8QiONE3fgd85Fy6XC5rNJnrdHgb9PlqyHo1G6PW66l3TNHS7XXQ6HVQqFeX0cdARyZBcgQ8yIYvNZgM/2MKy1/A28i5s+V0xF4ZhGKp5tVop2/V6rQ44nU65c+WQBkvTxNJ2YbohjHWAhbPFzPLhBSHO8kOSEAnO57NycI976QU+aMSZzgkacea3TFJmk+Ft4xbLzL7A78vlEoPBQMWJYEyJTruD/X6v/qW8dqstse2h1WohjuMPccwdWpalAk/U63Xouq4c8KB7h9wjGo0GtKGmMrvb7d7JziUz26TNmXg83ZOyGg6H0PSxqoKxzMPBUK15cGZXeKR8H5M8jgJHMt4Syf1GDT0pJ4aG8umM7LNMF/IAfzKUQzqW9cVaAN06UnNG/2qPg2qSY5KrUgxZW+wW1hvri++sv5z9XEdcL2PrufDZOVKj3M+660NSZtMpnp+eJKttVKUbisUiKuUy5osFkmADDNtYuhs8PT+jKQmplCuoVqsov5QV7tvxLcuOC306gytxcuR0Vxi6wtSUoo6+fkFqm4hPZ1gSLyphZ9mWrdSwUyj3lmV5OczHSIwpUsvEdbVQSAVwbVzrJZwnGv437hNYSHcxvN/f4Y51HE0DibW8QZwe/A2Or0VEaxthvEMk/cy4sdQ+JFBJPuwx/fMDL/UGAjHkTx4vBbm+XG8D9dtkAGui47VWQ01QKpZUTTJ5TAxDcJNMho0qJisbPTEaSJfMRL4hF4axXMHdHXDV+/AWc+iTqWpRxs2Uy8QwDEwloVlF5A73v77Bb77C//uCsFkFRi1h1QfGfaRTDWnpJ2LXEdZbbIVVVoOfSlZU4wiIQ2D3Nl9DuSzD4IYoxH0DZEl4BG3+AW8co7MCdo/hAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="add features and functionality section of dashboard"
+        title="add features and functionality section of dashboard"
+        src="/static/47937fcb354a9d2cfe73515b9c94e94f/410f3/3.png"
+        srcset="/static/47937fcb354a9d2cfe73515b9c94e94f/5a46d/3.png 300w,
+/static/47937fcb354a9d2cfe73515b9c94e94f/410f3/3.png 561w"
+        sizes="(max-width: 561px) 100vw, 561px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>This will bring us to the 'App Home' page where we will be able to add a scope to our bot by clicking 'Review Scopes to Add'</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1160px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/b8218faeea323445bb3f81a1f9141289/6be49/4.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 65.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsSAAALEgHS3X78AAACM0lEQVQ4y3VTy27TUBDNp7JmybobUGFFNxSpm9ANEh/ADiQkJCQEohHPRkEkfiT2ja/t+P1+5DBzU6eJoIlGN3ZmzpxzZu7IFhZmsymCIEDf9zj8VFWFoijQti2aptkHP5dliSzL9jnCFvBcD6MsieEFMdIsV4lpmsIwDGiapprUda2K+WxufnMwSJ7n6uRgcI4RP3j+BkKsVREnua4LKSWiKFLFzCKLU0QpNe06dG2nmPL7IYbGIwbwPA/aQkOSpIql4ziwLEsBsowtyX/+4BwXZ6+UFQ0VNnWOkoAGxoN0BRiGIVarFUncqE4usTNJthACS3OJnr5P75/h8vGlAizyghgyo/8AFkUOSSzmC11JrwhQShearsM0TUhHKpDTe6cYPxzvGDadkj4AHQFWZYHPMwvjN1/x4t01tHVIyT3KulPF236rzqv33zCdzIC2QpdnaMlDllwdMNx76HobTH/P8UdfIivYHza63CWz2dQZsQ+EEr20KQSaPL8bMNhsoNOa+J6rvOEGpiVgk4crbQFn8gnL658IaPoJrUZOxW17K3mIW0DatwVNmQF4KEEYwSFfefr+jwnctYAkfwMaXhLHKjjv0L9/AA0agO/76mWUZPA3IeLpd7jaHDZNXdg2TX+3n5x3CHIEmJKEkm5JQSA5TbymP6RcY27oML58hCUctZ98g7I0Q0TseZpdd4fkjBjGAUmhRF6Zbd3g7euXeHR+gifPTvDr6sPNzd4e3fO7AP8CZs/YXv/fxEMAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="App home dashboard"
+        title="App home dashboard"
+        src="/static/b8218faeea323445bb3f81a1f9141289/6be49/4.png"
+        srcset="/static/b8218faeea323445bb3f81a1f9141289/5a46d/4.png 300w,
+/static/b8218faeea323445bb3f81a1f9141289/0a47e/4.png 600w,
+/static/b8218faeea323445bb3f81a1f9141289/6be49/4.png 1160w"
+        sizes="(max-width: 1160px) 100vw, 1160px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>On this page is where we'll actually provide our bot with it's permissions. Go ahead and scroll down to the 'Scopes' section. Since we haven't added any permissions yet it should look like this:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1153px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/f6e745ff58c493daa69660c3ab4851dc/afd0b/5.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 32%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsSAAALEgHS3X78AAAAk0lEQVQY042P2QoDIQxF5/+/0hcfRKi476ZzU6aUUqYGLlk0h5ujlEKXcs5UayVrLRlj6C7GGPz/cx86voGtNdJak1KK+xjjWyEECjFRKo3mCbx2/gKllCSEYCgc4w0ZrlhzUu99D4hF7z2fDEeYocf818lbDlNKLNSYOec4YwYQYp4ut4HI5vFyuNZiAQChvgM+AQ1m1CQM6LknAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Scopes section with no permissions"
+        title="Scopes section with no permissions"
+        src="/static/f6e745ff58c493daa69660c3ab4851dc/afd0b/5.png"
+        srcset="/static/f6e745ff58c493daa69660c3ab4851dc/5a46d/5.png 300w,
+/static/f6e745ff58c493daa69660c3ab4851dc/0a47e/5.png 600w,
+/static/f6e745ff58c493daa69660c3ab4851dc/afd0b/5.png 1153w"
+        sizes="(max-width: 1153px) 100vw, 1153px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Now, the scopes we'll have to provide our bot with are 'channels:join', which allows our bot to join a channel in the workspace, 'channels:read', which allows the bot to view basic info about the channels in the workspace such as the channel ID, and 'chat:write' which allows the bot to send messages in the channel. Go ahead and click 'Add an OAuth Scope' and select these three from the drop down.</p>
+<p>After adding these 3 scopes, your Scopes section should look like this:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 570px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/1987b6a38622a8c140259ff46e0f3d70/432e7/6.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 84%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAAAsSAAALEgHS3X78AAAB30lEQVQ4y51U23KCMBDN/39Y+9LqjL47DoxVuQUCyN3TnKXborZ9MDPrShI257LEXK9X9H2PaZok+Pxs+B+Ytm2xWq3w+vKK9Xo9Lzw5+KZhgTzPkaUZkiRBVVXIsgxFUaCuazjnJMqylGdmhs5Xlxau6dF4YKxlxnFEGIQIgkAKc3OaplJUDvJZg4dwzWYW1uYo/Lp1NZKyRdO0glIKxnEs6Jqmkei67inK4zjBsMD72zs2mw22263oyUzq1PdyuUjoYQTwYIYfwzAIENGQVKgHM5Eyx1Es9NJkpm+tlTVFvzRv+V8oO1+gdAU6j+B+EKUa9ODqL61jRt97mRc2LSofNfrBU1r0JGmqy6TOwsykuCyk+83ghTxkNcK0QpB43frxhgap7nY77Pd7kSCKIpGByJf7KAvnzNyOjzR4IgfRaAvp3L+Ue49wHznszowCtppPnr5Ozn2/hWGI4/GIw+Eg/ap9ezqdvhG6ws0u3584TbftQP1YjA4z1HHOsSC1VPNosGgYxE5QfqP7EpiDJpCuthX7k1kL6T6axkvGkFrTjWi8GcP0o+dSQ+lTT4nfuxYmvRut69l5oWw9jfP5hOPHh1Chm0vaf94ud18L9LZhr5Eag5SISjf9e//9UvwT6SkrZlWwF00AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Scopes section with specified scopes"
+        title="Scopes section with specified scopes"
+        src="/static/1987b6a38622a8c140259ff46e0f3d70/432e7/6.png"
+        srcset="/static/1987b6a38622a8c140259ff46e0f3d70/5a46d/6.png 300w,
+/static/1987b6a38622a8c140259ff46e0f3d70/432e7/6.png 570w"
+        sizes="(max-width: 570px) 100vw, 570px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Next, you'll have to scroll up to the top of the page and click 'Install to Workspace', this is what actually adds the app's access to your workspace.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 570px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/b6e48417103fb874c57c855977978cb1/432e7/7.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 40.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsSAAALEgHS3X78AAABU0lEQVQoz42ReU/CUBDE+f6fRhONGo2CkUI90ap4IPSgiDH2oufr8fO1QQL/qJtM5mXfZDM72yqKgjiOSdOUJEmad81CCLIsI4oi4igkyQRpLrUiJ5b/VVVtoK6aW0EQoCgKqtrnXrvj4lyl3+sxfHxE0zSuBre0uwrXSpfhhcr1zhadvV3COGG9foa28jzHdR3cRYQTCtwow1skuH6AFyxIbINooOJcKviDc/zRE57zhed5hGHYcG1q5bBe1TQMdHPK2JxhmDbGl8/05Zn5yT6T9iGTh3vZtxhJTCypG4/Rdb1h27abiFYDhcxwOv/Ams2wJeaej9M5IFPbVKnMUgrzsqSUKOQ2debrqPsbK1e+S66/khtvDRfvFhxtw4u2DKfkr9o4Cs8an2fHmL1TphJ65wjr5hIhHcpTUy2Fv2HDIeFi6XC0gnh7opzbK+GP+D/1Dfr8X5ckTsUCAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="install to your workspace button"
+        title="install to your workspace button"
+        src="/static/b6e48417103fb874c57c855977978cb1/432e7/7.png"
+        srcset="/static/b6e48417103fb874c57c855977978cb1/5a46d/7.png 300w,
+/static/b6e48417103fb874c57c855977978cb1/432e7/7.png 570w"
+        sizes="(max-width: 570px) 100vw, 570px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Then click 'Allow'.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 772px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/e65da224f1a38830ff36c4f191b11439/940c5/8.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 61.33333333333334%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsSAAALEgHS3X78AAABbUlEQVQoz5VT2U6DUBDt3xvfTPwSY2KMD8ZYaGsi9kGfu0CgUJayc1mPzKQQSqrWSSZz783M4ZyZYYLWmqZBFzuv+a3BpxYhiCK8uxq+Dgbn1XV9kjvEmOBo3cPYHpcmXM/FVnvG1lqezRnWToYPYRjCNE14ngfLsvichAfY+z18S0NycFpwD47jQNd1zjnLsLsIIWDbNhRFgSzLmE6nWCze+CzJcygfS8xmM0iShNVqBd/3Wf6PgGmaMksCJZau63IReVmWqKqKY57nl0kmkM1mA3WrQlVVrNdrjoZu9EBFUfTF9IGLhpJlGXKRc6Q2JEmCMAiZaRAEPRCB/9pDKqBB9JIdlwcwljgmMFyfE8Co3TcCNAwDu92OI02TWCVZiiiOmd2fkrsLTYx6lcQJyxSZ4EGJNAOKFigvUR9ByCn3X4td1RXyFnQfBbh+vcft/AlxLi6XPP6dqOmRH8BoF/rq5Q430gMikZ3N7ewbqsKhR+tC4tcAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="workspace install confirmation page"
+        title="workspace install confirmation page"
+        src="/static/e65da224f1a38830ff36c4f191b11439/940c5/8.png"
+        srcset="/static/e65da224f1a38830ff36c4f191b11439/5a46d/8.png 300w,
+/static/e65da224f1a38830ff36c4f191b11439/0a47e/8.png 600w,
+/static/e65da224f1a38830ff36c4f191b11439/940c5/8.png 772w"
+        sizes="(max-width: 772px) 100vw, 772px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Once you finish the install you'll be redirected to your app's 'OAuth &#x26; Permissions' page. It's here that you'll be able to grab your Bot's OAuth Access Token. We'll need this to actually code our bot.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 563px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/4019a3f09ad823b44776fce8c6b3f9c8/7cb89/9.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 59.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsSAAALEgHS3X78AAAB4ElEQVQoz41Sa4+aUBDl//+jfmzTpNF1xWwRuoKi8saVlyByAU9nxjVxm21akpM7DJczM+eMlmUZHNtBEAQIwxCBH2C/3yMMQqxWK4k9z0Mcx7her/jXoxV5AcuysHbW2O128H0f6/UtZkLbtmGaJtyNi/P5jMvlQujkbOoT2nND+QZN02AcRyIsCunujiiKkCSJdOXtPclxzAVc15WOpesggrP1sfUihHGCLDtiGAZoSim0bSvV+eTKfHJFBsen00lwv3OqKlQNnd2Iqu2hhoeR67oWfVjL4/Eo3eV5LgSc45inqIiEv5dFKaN9fK6iL0NjgulkCl3XsSHt5rMZ9Oc5GUXaLQ3S1pH3V9J5QXeeplNUZXmjERLg0SvRMIpipGmKIEkR5yVSMirOSNtjjvETJ/l/zo/ExN3e3ZcOZZS3N5Q0ev4yQzH5htxYoHj6juzrF7S2CWUvofQf6IxnqJUBZS3QL3UocncgQpbncDig6zpoYgiJ36kerb9Fu5igc1cYiWQkkp5i9foT6tcLlLmAcqxbbMyhmho9EXJTvMNssMasXIEdrdsLqo5c7wcZa7iP9jd8NjIT8iLzjm0JGzLBpoVOyayb4uMfeMg96vpOqnGFvu8/gFvnJX2s/L/4DS2IknzIgfTiAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="OAuth bot token"
+        title="OAuth bot token"
+        src="/static/4019a3f09ad823b44776fce8c6b3f9c8/7cb89/9.png"
+        srcset="/static/4019a3f09ad823b44776fce8c6b3f9c8/5a46d/9.png 300w,
+/static/4019a3f09ad823b44776fce8c6b3f9c8/7cb89/9.png 563w"
+        sizes="(max-width: 563px) 100vw, 563px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Now that we have our bot's OAuth token and our app installed to the workspace, we can leave Slack's site and jump into our code editor to actually build the bot's functionality.</p>
+<h2>Building the Bot</h2>
+<p>In the terminal, make a new directory, and run <code>npm init</code> and go through the basic npm setup. Once that's complete go ahead and run <code>npm install slack</code>.</p>
+<p>Once that's done, go ahead and make an index.js file. This is where we'll actually write the code our bot will be running.</p>
+<p>To start, we'll declare a const 'Slack' and set it equal to a require statement for the 'slack' package.</p>
+<p><code>const Slack = require('slack');</code></p>
+<p>We'll then set our bot token from earlier to another const we'll call 'token'. I'm using an evironment variable here as it's a safer option for api keys but you don't have to.</p>
+<p><code>const token = process.env.SLACK_BOT_TOKEN;</code></p>
+<p>And then we'll create a new Slack object and pass in our token.</p>
+<p><code>const bot = new Slack({ token });</code></p>
+<p>From here we can call any methods our bot has access to. You can look into the methods available <a href="https://api.slack.com/methods">here</a>.</p>
+<p>What we want to be able to do, is run the 'chat.postMessage' method which, from it's page in the <a href="https://api.slack.com/methods/chat.postMessage">docs</a>, requires 3 parameters: a token (which will be automatically attached to each method we run because we're making our calls with the Slack object rather than without), a Channel ID, and the text we want to send.</p>
+<p>We can get the Channel ID from the url of our slack channel, but in order to get more familiar with the API, lets try to get it programatically.</p>
+<p>Quickly going the that methods doc I linked above, I see a method that may be of use to us: 'conversations.list()'. Let's give this one a try and see what our output is.</p>
+<pre><code>const Slack = require('slack');
+
+const token = process.env.SLACK_BOT_TOKEN;
+const bot = new Slack({ token });
+
+bot.conversations.list().then(console.log);
+</code></pre>
+<p>And here is my console output:</p>
+<pre><code>kyletomanelli@MacBook-Pro-6 slack-cat % node index.js
+{
+  ok: true,
+  channels: [
+    {
+      id: 'C01FNB76YAH',
+      name: 'general',
+      is_channel: true,
+      is_group: false,
+      is_im: false,
+      created: 1606688135,
+      is_archived: false,
+      is_general: true,
+      unlinked: 0,
+      name_normalized: 'general',
+      is_shared: false,
+      parent_conversation: null,
+      is_ext_shared: false,
+      is_org_shared: false,
+      shared_team_ids: [Array],
+      pending_shared: [],
+      pending_connected_team_ids: [],
+      is_pending_ext_shared: false,
+      is_member: false,
+      is_private: false,
+      is_mpim: false,
+      topic: [Object],
+      purpose: [Object],
+      previous_names: [],
+      num_members: 1
+    },
+    {
+      id: 'C01FRKVGQ3D',
+      name: 'random',
+      is_channel: true,
+      is_group: false,
+      is_im: false,
+      created: 1606688135,
+      is_archived: false,
+      is_general: false,
+      unlinked: 0,
+      name_normalized: 'random',
+      is_shared: false,
+      parent_conversation: null,
+      is_ext_shared: false,
+      is_org_shared: false,
+      shared_team_ids: [Array],
+      pending_shared: [],
+      pending_connected_team_ids: [],
+      is_pending_ext_shared: false,
+      is_member: false,
+      is_private: false,
+      is_mpim: false,
+      topic: [Object],
+      purpose: [Object],
+      previous_names: [],
+      num_members: 1
+    }
+  ],
+  response_metadata: { next_cursor: '' }
+}
+</code></pre>
+<p>Great, an array of all the channels in the workspace! We can just pick the channel we want to send from and save that channel ID as a variable that we can use.</p>
+<p>So if I want to send messages to General, I'll copy 'C01FNB76YAH' from my output and save it as an environment variable. Which allows me to add the following line to my code.</p>
+<p><code>const channel = process.env.SLACK_CHANNEL_ID;</code></p>
+<p>So now that we have our channel ID, let's try sending a message to that channel using that 'chat.postMessage' method.</p>
+<p><code>bot.chat.postMessage({ channel, text: 'meow' });</code></p>
+<p>running our code again aaaannd...</p>
+<pre><code>kyletomanelli@MacBook-Pro-6 slack-cat % node index.js
+(node:5779) UnhandledPromiseRejectionWarning: Error: not_in_channel
+    at exec (/Users/kyletomanelli/Projects/slack-cat/node_modules/slack/src/_exec.js:11:15)
+    at Object._execWithToken (/Users/kyletomanelli/Projects/slack-cat/node_modules/slack/src/_factory.js:31:16)
+    at Object.&#x3C;anonymous> (/Users/kyletomanelli/Projects/slack-cat/index.js:11:10)
+    at Module._compile (internal/modules/cjs/loader.js:1123:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1143:10)
+    at Module.load (internal/modules/cjs/loader.js:972:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:872:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)
+    at internal/main/run_main_module.js:17:47
+</code></pre>
+<p>Oh no! We got an error, but luckily the Slack API has our back. We can see the problem in that first line.</p>
+<p><code>(node:5779) UnhandledPromiseRejectionWarning: Error: not_in_channel</code></p>
+<p>The bot isn't in the channel we're trying to post in, so we can certainly just open up slack and manually add our bot to the channel, but once again lets try to do this programatically!</p>
+<p>I found another method 'conversations.members', which appears to return a list of all the members in the channel, as well as another method 'conversations.join', which will join the specified channel. So we can run a check to see if our bot is in the channel, and if not, set it to join. And once we're in the channel, we'll be able to send our message.</p>
+<p>So let's take a look at that members list:</p>
+<p><code>bot.conversations.members({ channel }).then(console.log);</code></p>
+<pre><code>kyletomanelli@MacBook-Pro-6 slack-cat % node index.js
+{
+  ok: true,
+  members: [ '&#x3C;my-user-id>' ],
+  response_metadata: { next_cursor: '' }
+}
+</code></pre>
+<p>(I've censored my user id)</p>
+<p>Okay so only 1 user ID is showing in the members list and it's mine. So I need to somehow get the bot's user ID so I can check whether or not it's in the channel.</p>
+<p>Luckily there's another method we can use to get basic IDs for our bot. 'auth.test' is mainly used to confirm you're authenticating correctly but it also returns a user_id which we can make use of.</p>
+<p><code>bot.auth.test().then(console.log);</code></p>
+<pre><code>kyletomanelli@MacBook-Pro-6 slack-cat % node index.js
+{
+  ok: true,
+  url: 'https://kylesdevelopmentslack.slack.com/',
+  team: "Kyle's Development Slack",
+  user: 'cat',
+  team_id: '&#x3C;bot-team-id>',
+  user_id: '&#x3C;bot-user-id>',
+  bot_id: '&#x3C;bot-id>'
+}
+</code></pre>
+<p>(I've censored my these user ids as well)</p>
+<p>Great! I'll grab the bot-user-id and save it as another environment variable called 'userId'. Then I'll modify our conversations.members method call to check for userId and call conversations.join if it's not present.</p>
+<p>To make it easier I decided to make an async function which awaits the members list. This is the function I wrote:</p>
+<pre><code>const join = async () => {
+  const data = await bot.conversations.members({ channel });
+  if (!data.members.includes(userId)) {
+    bot.conversations.join({ channel });
+  }
+};
+</code></pre>
+<p>Great! So now our bot is checking if it's in the channel, and then joining if not.</p>
+<p>And calling that conversations.members method again I'm now seeing another user listed in the channel. (It may be important to note that the new user ID being listed in the channel list will not be the same as your App ID, so don't worry if it's different.) You can still confirm the bot is in the channel by actually checking your channel in your browers or your slack app. You should see a message that says your app has joined the channel:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 576px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/685311dde0471966bfb07910f5a441e1/533c1/12.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 10%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAACXBIWXMAAAsSAAALEgHS3X78AAAAYElEQVQI14XMPQrDIACA0dx/7Ik6lg4NmLpaKCqiATP4v3whuYDDW9/ye/95Pl5IIdm+gvWzopQihECMkZQSpRRaa9Rap5ZoD8zmcNZhrEFrjff+dqV72Mk5M8ag9z51AhvKl0GGpf3VAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="cat has joined channel"
+        title="cat has joined channel"
+        src="/static/685311dde0471966bfb07910f5a441e1/533c1/12.png"
+        srcset="/static/685311dde0471966bfb07910f5a441e1/5a46d/12.png 300w,
+/static/685311dde0471966bfb07910f5a441e1/533c1/12.png 576w"
+        sizes="(max-width: 576px) 100vw, 576px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Great! Now let's try sending our message again!</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 568px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/5cc6dac60e01088f7cdc2b8734c74b57/10e91/13.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 10.999999999999998%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAACXBIWXMAAAsSAAALEgHS3X78AAAAR0lEQVQI153DwQmAMAxA0a7vJg4jXgV7k4oFIVa8FNPkC26gD16oY0S6nmWKrClxlfNtt+LaPg+ahTrM7FtGyoG708xw/nkAmdWboKbgPiMAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="cat message saying &#39;meow&#39;"
+        title="cat message saying &#39;meow&#39;"
+        src="/static/5cc6dac60e01088f7cdc2b8734c74b57/10e91/13.png"
+        srcset="/static/5cc6dac60e01088f7cdc2b8734c74b57/5a46d/13.png 300w,
+/static/5cc6dac60e01088f7cdc2b8734c74b57/10e91/13.png 568w"
+        sizes="(max-width: 568px) 100vw, 568px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Wooo!! We have our cat bot meowing!</p>
+<p>At this point, we're pretty much done. We've built a simple slack bot that can check to see if it's in a specified channel, join that channel if not, and send messages to that channel. You can take this barebones framework and run with it to build some really neat things. For example, let's say I didn't just want a slack bot that would meow when I run it. I want a slack bot that, like a real cat, will meow at me randomly throughout the day.</p>
+<p>To do this I would wrap the postMessage in a function called 'meow' and declare a variable called nextMeow and set it to Date.now() + a random amount of time. I'd then use a setInterval set to run every 10 minutes or so and check to see if that time stored in nextMeow had passed and if it had, I'd call our meow function and set a new nextMeow time.</p>
+<p>These functions would look something like this:</p>
+<pre><code>const meow = () => bot.chat.postMessage({ channel, text: 'meow' });
+
+const getNextMeow = () =>
+  Math.floor(Date.now() + Math.random() * Math.floor(10000000));
+
+let nextMeow = getNextMeow();
+
+setInterval(() => {
+  if (Date.now > nextMeow) {
+    meow();
+    nextMeow = getNextMeow();
+  }
+}, 600000);
+</code></pre>
+<p>Okay so not entirely useful or productive in any way but hey! At least we built something fun and learned a bit along the way. If you'd like to take a look at the code for this blog you can do so <a href="https://github.com/ktomanelli/cat-slack-bot">here</a>.</p>
+<p>I look forward to going over more with the Slack API. Stay tuned!</p></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/posts/slack:-making-a-simple-bot";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-177f0ce798b672df6e51.js"],"app":["/app-8a286143b40e5b6c2ec4.js"],"component---src-pages-index-js":["/component---src-pages-index-js-426671a7be08568aa1e5.js"],"component---src-templates-post-js":["/component---src-templates-post-js-2e551a17ad0a31f82dae.js"]};/*]]>*/</script><script src="/polyfill-177f0ce798b672df6e51.js" nomodule=""></script><script src="/component---src-templates-post-js-2e551a17ad0a31f82dae.js" async=""></script><script src="/commons-865c6a758ed7e2eabd99.js" async=""></script><script src="/app-8a286143b40e5b6c2ec4.js" async=""></script><script src="/framework-256fdde5199f9087be1b.js" async=""></script><script src="/webpack-runtime-9ba3d4953038f13ac4c6.js" async=""></script></body></html>
