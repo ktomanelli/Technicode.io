@@ -3,9 +3,8 @@ title: "Sloth.Pics"
 date: "2020-06-05"
 ---
 
- 
-
-\[caption id="attachment\_104" align="alignnone" width="773"\]![](images/2237778321_2c0fe3b251-300x203.jpg) Photo by [iamrandygirl](https://www.flickr.com/photos/70284362@N00)\[/caption\]
+![sloth](images/2237778321_2c0fe3b251-300x203.jpg)
+_Photo by [iamrandygirl](https://www.flickr.com/photos/70284362@N00)_
 
 So a few weeks ago I was searching the internet for some sort of API endpoint that could programmatically provide me with pictures of sloths.
 
@@ -21,9 +20,8 @@ And that kind of makes sense, right? I mean what kind of person would put spend 
 
 . . . . . . . .
 
-\[caption id="attachment\_106" align="alignnone" width="757"\]![](images/Screen-Shot-2020-06-05-at-3.59.47-PM-300x297.png) Photo in screenshot by [John Wenzelburger](https://www.flickr.com/photos/87857615@N02)\[/caption\]
-
- 
+![](images/Screen-Shot-2020-06-05-at-3.59.47-PM-300x297.png)
+_Photo in screenshot by [John Wenzelburger](https://www.flickr.com/photos/87857615@N02)_
 
 So that's exactly what I did.
 
@@ -45,9 +43,8 @@ They have a neat demo here: (you need an AWS account to use demo) [https://conso
 
 Here's an example of this image recognition in action!
 
- 
-
-\[caption id="attachment\_99" align="alignnone" width="714"\]![](images/Screen-Shot-2020-06-05-at-3.11.09-PM-300x150.png) Photo in screenshot by [Michelle Callahan](https://www.flickr.com/photos/60654399@N00)\[/caption\]
+![](images/Screen-Shot-2020-06-05-at-3.11.09-PM-300x150.png)
+_Photo in screenshot by [Michelle Callahan](https://www.flickr.com/photos/60654399@N00)_
 
 As you can see, Rekognition is 94.5% sure that this is in fact a sloth!
 
@@ -55,7 +52,8 @@ Great!
 
 Except sometimes it's not so sure...
 
-\[caption id="attachment\_100" align="alignnone" width="748"\]![](images/Screen-Shot-2020-06-05-at-3.47.45-PM-300x162.png) Photo in screenshot by [Steven Lam](https://www.flickr.com/photos/39647236@N07)\[/caption\]
+![](images/Screen-Shot-2020-06-05-at-3.47.45-PM-300x162.png)
+_Photo in screenshot by [Steven Lam](https://www.flickr.com/photos/39647236@N07)_
 
 Unfortunately, there's not much I can do about these cases, but the vast majority are still also are labeled 'sloth' at a relatively high percentage. So not really a problem as long as I make sure my sloth acceptance percentage low enough to catch the outliers.
 
@@ -95,15 +93,13 @@ I then send this object to an MLab database to hold until we get an API request.
 
 MLab is a document-oriented cloud database platform owned by MongoDB. Document-oriented databases are non-relational databases. And instead of storing tables, that relate to each other, they're used for storing documents, which are pretty much just JSON objects. MLab is really easy to set up and is perfect for prototyping projects especially since it's free as long as you're under 0.5GB of storage. And since we're just storing JSON objects, we'll have plenty of space for our data.
 
- 
-
 ![](images/Screen-Shot-2020-06-05-at-3.50.33-PM-300x289.png)
 
 And since MLab is owned by MongoDB, I was able to use Mongo's [NPM wrapper](https://www.npmjs.com/package/mongodb) to access, store, and retrieve my data.
 
 ## The API
 
-I used Express to set up the frontend and API side of this project. I have a GET route set for '/api', which calls on MongoDB's $sample method to pull a random document from the database. This allows for the fetch call on the root page of the site that displays a random sloth image on page load. This also allows for everyone to be able to pull random sloth images from the database whenever they want with just a GET request.
+I used Express to set up the frontend and API side of this project. I have a GET route set for '/api', which calls on MongoDB's \$sample method to pull a random document from the database. This allows for the fetch call on the root page of the site that displays a random sloth image on page load. This also allows for everyone to be able to pull random sloth images from the database whenever they want with just a GET request.
 
 ## Heroku
 
@@ -119,10 +115,6 @@ As the API stands now, It'll work great for the project I originally needed it f
 
 3.) I'd love to implement some sort of size matching capability to the API and allow requesters to specify the size of an image they want and return them a sloth image of that size.
 
- 
-
 This was a really fun project to work on and although a random sloth generator doesn't seem particularly useful to anyone, the tech behind it very much is. Image recognition is and will continue to be a massive part of our lives and I'm really glad I took the time to learn a bit more about how this tech works.
-
- 
 
 If you'd like to take a look at the code behind Sloth.Pics, [here's a link to the repo!](https://github.com/ktomanelli/Sloth.pics)
