@@ -17,13 +17,10 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `Space Mono`,
-            variants: [`400`, `700`]
-          },
+          'Space Mono\:400,700'
         ],
       },
     },
