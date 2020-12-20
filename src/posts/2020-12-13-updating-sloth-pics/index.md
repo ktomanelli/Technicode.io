@@ -13,4 +13,4 @@ Then once I confirmed my db is connected successfully, I went ahead and started 
 
 I ended up iterating through 3 pages which gave me 1500 images to pass to AWS, and after the image recognition, I had over 600 images which were confirmed sloth images. This was much better than the 200 images I had from my initial CC image pull.
 
-For the time being, Sloth.pics should be stable and continue providing sloth images for everyone who needs them. When I have the time I'd love to give the site a bit of a face lift as I had put it together when I was not as familiar with full stack development. Adding it to the list! If you'd like to make use of the API, feel free to check it out at [Sloth.Pics](https://sloth.pics)
+For the time being, Sloth.pics should be stable and continue providing sloth images for everyone who needs them. When I have the time I'd love to give the site a bit of a face lift as I had put it together when I was not as familiar with full stack development. Adding it to the list! If you'd like to make use of the API, feel free to check it out at [Sloth.Pics](https://sloth.pics)!
