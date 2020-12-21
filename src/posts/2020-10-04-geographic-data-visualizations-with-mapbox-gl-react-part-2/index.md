@@ -21,7 +21,7 @@ Now, in the same component, lets head down to the function that handles adding o
 
 the changeInt value is the number of people who lost employment from August 2019 to August 2020 for each state. We'll need to manipulate this value so it is more representative of what we're trying to display. So since we're already iterating through the states, lets grab the population from each state and divide that by 1000, we can then divide the changeInt value by the return of that expression. We'll save this value to a new key in our source data and change state.properties.change to the raw unemployment change value for later.
 
-`const addDataToSource= () => states.features.forEach(state=>{ const name = state.properties.name const stateData = props.data.find(item=>(item.State===name)) if(stateData){ state.properties.change = stateData.Change let changeInt = parseInt(stateData.Change) if(changeInt<0) changeInt*=-1 state.properties.changePerPop = changeInt/(population[name]/1000)
+`const addDataToSource= () => states.features.forEach(state=>{ const name = state.properties.name const stateData = props.data.find(item=>(item.State===name)) if(stateData){ state.properties.change = stateData.Change let changeInt = parseInt(stateData.Change) if(changeInt<0) changeInt\*=-1 state.properties.changePerPop = changeInt/(population[name]/1000)
 
 console.log(state.properties.changePerPop) } })` Console logging this should give us something like this:
 
@@ -29,15 +29,15 @@ console.log(state.properties.changePerPop) } })` Console logging this should giv
 
 This is great, our visualization will be much more representative with these values. Now to make sure our values play nice with MapBox's stop property, let's throw another parseInt around this value.
 
-`const addDataToSource= () => states.features.forEach(state=>{ const name = state.properties.name const stateData = props.data.find(item=>(item.State===name)) if(stateData){ state.properties.change = stateData.Change let changeInt = parseInt(stateData.Change) if(changeInt<0) changeInt*=-1 state.properties.changePerPop = parseInt(changeInt/(population[name]/1000))
+`const addDataToSource= () => states.features.forEach(state=>{ const name = state.properties.name const stateData = props.data.find(item=>(item.State===name)) if(stateData){ state.properties.change = stateData.Change let changeInt = parseInt(stateData.Change) if(changeInt<0) changeInt\*=-1 state.properties.changePerPop = parseInt(changeInt/(population[name]/1000))
 
 } })`
 
 Since our values are much smaller now, we'll have to adjust the value we pass into the getColors function as well as a few values in that function itself. After a quick skim of our new parsed values, the highest I'm seeing is 75, just to be safe, I'll set my max in the getColors call to 76. We'll also change out fill-color property from 'change' to 'changePerPop'
 
-``map.addLayer({ id:`states-fill`, 'type': 'fill', 'source': `states`, 'paint': { 'fill-color': { property: 'changePerPop', stops: getColors(76) }, 'fill-opacity': 0.6 } })``
+`` map.addLayer({ id:`states-fill`, 'type': 'fill', 'source': `states`, 'paint': { 'fill-color': { property: 'changePerPop', stops: getColors(76) }, 'fill-opacity': 0.6 } }) ``
 
-Now up to the getColors definition. Since we want 10 color steps to get to our max color, ill divide 76 by 10 to get 7.6. I'll round down and change my increment in this function to 7. I'll also change the value i is being divided by to 7 for each hex componenet. The function should now look like this:
+Now up to the getColors definition. Since we want 10 color steps to get to our max color, ill divide 76 by 10 to get 7.6. I'll round down and change my increment in this function to 7. I'll also change the value i is being divided by to 7 for each hex component. The function should now look like this:
 
 `const getColors=(max)=>{ const arr=[] for(let i=0;i<=max;i+=7){ arr.push([i,rgbToHex(parseInt(i/7 * r/10), parseInt(i/7 * g/10), parseInt(i/7 * b/10))]) } return arr }`
 
@@ -72,7 +72,7 @@ Change in State Unemployment:
 {mouseOverState.change}
 
 Change in State Unemployment Per 1000 People:  
-{mouseOverState.changePerPop*-1}
+{mouseOverState.changePerPop\*-1}
 
 mapContainer.current=el} style={styles} />
 

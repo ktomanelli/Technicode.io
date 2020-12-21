@@ -13,7 +13,7 @@ I really only started using WordPress as part of my Software Engineering Bootcam
 
 So where do I go?
 
-I could build my own WordPress-esque backend rails app where everything is stored in a database and and served to the frontend but honestly that sounds kinda overkill. I want my blog to be simple, lean, and lightweight. And with that in mind, I think I want to drop the backend/database idea. If I can just get my blog posts converted to markdown, I can just keep them in a folder and then use something like Gatsby to pulln and display each post. On top of this, I'd be able to host out of Github Pages.
+I could build my own WordPress-esque backend rails app where everything is stored in a database and and served to the frontend but honestly that sounds kinda overkill. I want my blog to be simple, lean, and lightweight. And with that in mind, I think I want to drop the backend/database idea. If I can just get my blog posts converted to markdown, I can just keep them in a folder and then use something like Gatsby to pull in and display each post. On top of this, I'd be able to host out of Github Pages.
 
 The only downside I can see to this system would be having to write every new blog post in markdown, which wouldn't be too bad, but maybe I can make some simple editor to make it easier if it turns out to be too much of a pain.
 
@@ -31,7 +31,7 @@ Which will take us to this page:
 
 ![](images/Screen-Shot-2020-10-18-at-2.58.34-PM.png)
 
-From here we'll just want to confirm we're exporting all content and then click 'Download Export File'. This will initialte the download.
+From here we'll just want to confirm we're exporting all content and then click 'Download Export File'. This will initialize the download.
 
 ## Converting to Markdown
 

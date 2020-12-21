@@ -19,9 +19,9 @@ So the first step in making a map-based data visualization is having some data y
 
 So to get started I went ahead and made a create-react-app called 'unemployment-vis'. I then moved my .csv file from earlier into the 'public' folder of my 'unemployment-vis directory. I then npm installed 'mapbox-gl' which is the mapbox library, and a package called 'papaparse' which we'll be using to parse our .csv.
 
-$ create-react-app covid-vis ... $ npm install mapbox-gl ... $ npm install papaparse
+$ create-react-app covid-vis ... $ npm install mapbox-gl ... \$ npm install papaparse
 
-Now let's clear out App.js in the 'src' folder and convert it to a functional component. We'll also add a constant called pathToCsv which we'll set to "process.env.PUBLIC\_URL+'/employment-by-state.csv'". This will point to the location of our .csv file in the 'public' folder.
+Now let's clear out App.js in the 'src' folder and convert it to a functional component. We'll also add a constant called pathToCsv which we'll set to "process.env.PUBLIC_URL+'/employment-by-state.csv'". This will point to the location of our .csv file in the 'public' folder.
 
 ```
 import React from 'react';
@@ -59,11 +59,11 @@ const App = ()=>{
 
   const [data,setData] = useState(null)
   useEffect(()=>{
-    
+
   },[])
 
   return(
-    <h1>Hello World</h1>  
+    <h1>Hello World</h1>
   )
 }
 ```
@@ -97,7 +97,7 @@ Okay let's save and check if we're getting our data in the console.
 Yes! That's our data, now lets update our 'complete' function so instead of logging to the console, it saves that data to our data state variable.
 
 ```
-//App.js  
+//App.js
 
 const [data,setData] = useState(null)
   useEffect(()=>{
@@ -221,7 +221,7 @@ const App = ()=>{
 
   return(
     <>
-    <h1>Hello World</h1> 
+    <h1>Hello World</h1>
     <data?<Mapbox data={data}/>:''}
     </>
   )
@@ -273,7 +273,7 @@ So at this point, our full Mapbox component should look like this:
 ```
 const Mapbox = (props) => {
     const mapContainer = useRef(null)
-    
+
     useEffect(()=>{
         mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN
         const map = new mapboxgl.Map(
@@ -360,14 +360,14 @@ Next we'll need to pick a max color for our visualization. So the color that the
     const b = 152
 ```
 
-We'll also need 2 other functions that will assist in converting rgb color componentes to hexidecimal strings. These functions are below:
+We'll also need 2 other functions that will assist in converting rgb color components to hexidecimal strings. These functions are below:
 
 ```
     function componentToHex(c) {
         var hex = c.toString(16);
         return hex.length == 1 ? "0" + hex : hex;
     }
-      
+
     function rgbToHex(r, g, b) {
         return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
     }

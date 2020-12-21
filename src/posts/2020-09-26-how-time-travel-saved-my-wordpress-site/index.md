@@ -102,7 +102,7 @@ Hmmm.
 
 Okay looks like I’m on my own on this one. But at least I know I can revert back to before the change!
 
-This means I might be able to grab a copy of my WordPress database from after the change which has my most current blog post and compare it with the database before the change. Maybe I can just input my new blogpost into the working config and worry about the timezone later??
+This means I might be able to grab a copy of my WordPress database from after the change which has my most current blog post and compare it with the database before the change. Maybe I can just input my new blog post into the working config and worry about the timezone later??
 
 That seems like as fine a place to start as any, so that’s what I’ll do.
 
@@ -132,7 +132,7 @@ I scrolled through the files and found 3 lines that I wanted to replace in the p
 
 I then Saved the file and used Cyberduck to put the file back onto the Lightsail server.
 
-From here I’m able to replace my SQL DB with the fixed file which is aptly named ‘fixed\_file.sql’. I did so by running this command:
+From here I’m able to replace my SQL DB with the fixed file which is aptly named ‘fixed_file.sql’. I did so by running this command:
 
 `$ mysql -u mysqlusername -p databasename < fixed_file.sql`
 

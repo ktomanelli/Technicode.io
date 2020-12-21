@@ -65,7 +65,7 @@ To start, we'll declare a const 'Slack' and set it equal to a require statement 
 
 `const Slack = require('slack');`
 
-We'll then set our bot token from earlier to another const we'll call 'token'. I'm using an evironment variable here as it's a safer option for api keys but you don't have to.
+We'll then set our bot token from earlier to another const we'll call 'token'. I'm using an environment variable here as it's a safer option for api keys but you don't have to.
 
 `const token = process.env.SLACK_BOT_TOKEN;`
 
@@ -77,7 +77,7 @@ From here we can call any methods our bot has access to. You can look into the m
 
 What we want to be able to do, is run the 'chat.postMessage' method which, from it's page in the [docs](https://api.slack.com/methods/chat.postMessage), requires 3 parameters: a token (which will be automatically attached to each method we run because we're making our calls with the Slack object rather than without), a Channel ID, and the text we want to send.
 
-We can get the Channel ID from the url of our slack channel, but in order to get more familiar with the API, lets try to get it programatically.
+We can get the Channel ID from the url of our slack channel, but in order to get more familiar with the API, lets try to get it programmatically.
 
 Quickly going the that methods doc I linked above, I see a method that may be of use to us: 'conversations.list()'. Let's give this one a try and see what our output is.
 
@@ -186,7 +186,7 @@ Oh no! We got an error, but luckily the Slack API has our back. We can see the p
 
 `(node:5779) UnhandledPromiseRejectionWarning: Error: not_in_channel`
 
-The bot isn't in the channel we're trying to post in, so we can certainly just open up slack and manually add our bot to the channel, but once again lets try to do this programatically!
+The bot isn't in the channel we're trying to post in, so we can certainly just open up slack and manually add our bot to the channel, but once again lets try to do this programmatically!
 
 I found another method 'conversations.members', which appears to return a list of all the members in the channel, as well as another method 'conversations.join', which will join the specified channel. So we can run a check to see if our bot is in the channel, and if not, set it to join. And once we're in the channel, we'll be able to send our message.
 
@@ -241,7 +241,7 @@ const join = async () => {
 
 Great! So now our bot is checking if it's in the channel, and then joining if not.
 
-And calling that conversations.members method again I'm now seeing another user listed in the channel. (It may be important to note that the new user ID being listed in the channel list will not be the same as your App ID, so don't worry if it's different.) You can still confirm the bot is in the channel by actually checking your channel in your browers or your slack app. You should see a message that says your app has joined the channel:
+And calling that conversations.members method again I'm now seeing another user listed in the channel. (It may be important to note that the new user ID being listed in the channel list will not be the same as your App ID, so don't worry if it's different.) You can still confirm the bot is in the channel by actually checking your channel in your browser or your slack app. You should see a message that says your app has joined the channel:
 
 ![cat has joined channel](images/12.png)
 
@@ -251,7 +251,7 @@ Great! Now let's try sending our message again!
 
 Wooo!! We have our cat bot meowing!
 
-At this point, we're pretty much done. We've built a simple slack bot that can check to see if it's in a specified channel, join that channel if not, and send messages to that channel. You can take this barebones framework and run with it to build some really neat things. For example, let's say I didn't just want a slack bot that would meow when I run it. I want a slack bot that, like a real cat, will meow at me randomly throughout the day.
+At this point, we're pretty much done. We've built a simple slack bot that can check to see if it's in a specified channel, join that channel if not, and send messages to that channel. You can take this bare-bones framework and run with it to build some really neat things. For example, let's say I didn't just want a slack bot that would meow when I run it. I want a slack bot that, like a real cat, will meow at me randomly throughout the day.
 
 To do this I would wrap the postMessage in a function called 'meow' and declare a variable called nextMeow and set it to Date.now() + a random amount of time. I'd then use a setInterval set to run every 10 minutes or so and check to see if that time stored in nextMeow had passed and if it had, I'd call our meow function and set a new nextMeow time.
 

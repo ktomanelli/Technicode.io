@@ -11,7 +11,7 @@ The bootcamp process itself is incredibly intensive and pretty much forces you t
 
 In this blog I'll go over the things I've done to make learning new tech as quick and efficient as possible.
 
-Now obviously everyone's brain works differently and things that work for me may not necessarily work for anyone else, but I think the best the way to figure out what works for you is to try what works for others and adjust where neccessary.
+Now obviously everyone's brain works differently and things that work for me may not necessarily work for anyone else, but I think the best the way to figure out what works for you is to try what works for others and adjust where necessary.
 
 So let's get started.
 
@@ -21,7 +21,7 @@ When I need to learn a new technology my first priority is to find some sort of 
 
 Follow along in your own environment until you feel like you have a decent grasp. If you want to finish the tutorial, great! If you don't have the time, don't worry, you can always come back if you get tripped up.
 
-Once you feel good enough to go off on your own, that's where the real learning begins. You'll quickly come across errors that you don't know and things you don't know how to do. So how do you get around these obsticles? Google! Google your errors, google your questions, read the stackoverflow posts, read the blogs, and read the technologies docs that come up. This is what you need to get comfortable doing because this is what working in tech is. The problems you're seeing now will probably be much simpler than problems you'd see in a professional enironment using the tech but that's okay! You're new! What's important is that the method you use to get around the issue will be the same.
+Once you feel good enough to go off on your own, that's where the real learning begins. You'll quickly come across errors that you don't know and things you don't know how to do. So how do you get around these obstacles? Google! Google your errors, google your questions, read the stack overflow posts, read the blogs, and read the technologies docs that come up. This is what you need to get comfortable doing because this is what working in tech is. The problems you're seeing now will probably be much simpler than problems you'd see in a professional environment using the tech but that's okay! You're new! What's important is that the method you use to get around the issue will be the same.
 
 On the job, if you come across an error you cant figure out, what do you do? Google it or ask someone! the same thing you need to be doing when you're first learning. And that is the key because you're never done learning. Even when you've learned enough to get hired somewhere, sure you're getting paid, and you might be pretty good at what you're doing, but you're always still learning.
 
@@ -31,7 +31,7 @@ A platform that's very similar to a coding bootcamp and I always felt had a grea
 
 But there's not always a free resource like freecodecamp and you probably don't have the money to drop on a 4 month bootcamp for every new topic you want to learn. Thats where sites like Udemy came in for me.
 
-Udemy has cheap video courses on pretty much everything. And if the course isnt cheap, wait a couple days, they're always having sales. I remember I wanted to buy a particular course that was listed at $119 and there was no way I was going to spend that much. I ended up checking back a couple days later and it was on sale for $12.99.
+Udemy has cheap video courses on pretty much everything. And if the course isn't cheap, wait a couple days, they're always having sales. I remember I wanted to buy a particular course that was listed at $119 and there was no way I was going to spend that much. I ended up checking back a couple days later and it was on sale for $12.99.
 
 I've used Udemy courses for so many things, CCNA? Udemy courses. Minecraft mods in Java? Udemy courses. Data Structures and Algorithms? Udemy courses!
 

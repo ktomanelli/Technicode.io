@@ -1,5 +1,5 @@
 ---
-title: "Building A Gastby Blog Site with Markdown Content"
+title: "Building A Gatsby Blog Site with Markdown Content"
 date: "2020-10-25"
 ---
 
@@ -140,7 +140,7 @@ Navigating to this url while the server is running, we get this:
 
 ![Graphiql home page](images/4.png)
 
-On the left side of the window you'll see a list of potential querys that we can perform in our project.
+On the left side of the window you'll see a list of potential queries that we can perform in our project.
 
 ![Graphiql query options](images/5.png)
 
@@ -205,7 +205,7 @@ So right under this we'll iterate through the data returned by the query, create
 
 So now lets make our component template. As you can see from the component key value pair, we're going to make a folder in our 'src' folder called templates, and then make a 'post.js' file in that folder.
 
-Our post.js file will really only have two functions: a graphql query searching for the post with the corresponding id for that gatby page, and an actual component function that will take in the data from the query and return it so it'll acutally display on the page.
+Our post.js file will really only have two functions: a graphql query searching for the post with the corresponding id for that gatsby page, and an actual component function that will take in the data from the query and return it so it'll actually display on the page.
 
 This is what post.js should look like:
 

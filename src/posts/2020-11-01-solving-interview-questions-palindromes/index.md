@@ -18,7 +18,7 @@ const isPalindrome=(string)=>{
 }
 ```
 
-This is a very barebones question, we're just reversing the string we are given, comparing it with the initial string and returning true or false, simple right?
+This is a very bare-bones question, we're just reversing the string we are given, comparing it with the initial string and returning true or false, simple right?
 
 Let's try it out.
 
@@ -55,7 +55,7 @@ This way of solving the problem looks significantly cleaner than the For Loop so
 
 ## Edge Cases
 
-Now these solutions will work fine for single word palindromes like 'racecar' but not for sentances or multi-word strings like 'taco cat'. We also want to account for the possibility that a string with capital letters can be checked, so we'll have to add some code to account for these cases.
+Now these solutions will work fine for single word palindromes like 'racecar' but not for sentences or multi-word strings like 'taco cat'. We also want to account for the possibility that a string with capital letters can be checked, so we'll have to add some code to account for these cases.
 
 ```
 const isPalindrome=(string)=>{

@@ -10,9 +10,9 @@ Since this is the first post of it's kind that I'll be making, I'll start with a
 ## The Problem
 
 > Given an array of integers (nums) and an integer (target), return indices of the two numbers such that they add up to target.
-> 
+>
 > You may assume that each input would have exactly one solution, and you may not use the same element twice.
-> 
+>
 > You can return the answer in any order.
 
 Okay, so we're being given an array of numbers and a target. We need to check to see there are any numbers in the array that add up to the target, and if so, return the indices of the numbers. Also, we can't use the same element twice. Let's jump into it.
@@ -31,7 +31,7 @@ Let's see if we can optimize this.
 
 So the key for lowering the time complexity for this problem is something called memoization. Instead of looping through the entire array exponentially until we find a match, we can store the data from the given array into an object which will allow us to significantly cut back on our time complexity. This will however increase our space complexity since our object will end up being exactly as large as the array we pass in. Let's try it out.
 
-So first, we'll make our object. To do so, we'll initialize an empty object, loop through our array and for each item in the array create a key value pair from that value and index respecively.
+So first, we'll make our object. To do so, we'll initialize an empty object, loop through our array and for each item in the array create a key value pair from that value and index respectively.
 
 `const object = {} for(let i = 0;i < nums.length;i++){ object[nums[i]] = i }`
 

@@ -80,11 +80,11 @@ This tells airtable what view we'd like to focus on. By default your airtable sh
 
 Now that we have the correct table and view, we can call the .all() method and this will return all the records in this table.
 
-This is certainly useful, but I think I'll only need the records that meet certain criteria. We have two collumns in the table that I'd like to check before returning the results of the .all() call. And I could certainly use a .filter() to sift through any records I won't need but a cleaner way to filter with Airtable is to use a filterByFormula.
+This is certainly useful, but I think I'll only need the records that meet certain criteria. We have two columns in the table that I'd like to check before returning the results of the .all() call. And I could certainly use a .filter() to sift through any records I won't need but a cleaner way to filter with Airtable is to use a filterByFormula.
 
 A filterByFormula is an optional key-value pair that we can add to our .select object which will filter the returned records according to a formula we pass in. This way we'll only receive records that pass through the formula. You can read up on filterByFormula [here](https://support.airtable.com/hc/en-us/articles/203255215-Formula-Field-Reference).
 
-The formula I'll be using will be checking that a record has a 'Status' of 'open' and a 'Is it approved?' of '1'. The 'Status' and 'Is it approved?' correspond to collumns in the table and the 'open' and '1' are the values we want our returned records to have. So my code will look like this:
+The formula I'll be using will be checking that a record has a 'Status' of 'open' and a 'Is it approved?' of '1'. The 'Status' and 'Is it approved?' correspond to columns in the table and the 'open' and '1' are the values we want our returned records to have. So my code will look like this:
 
 ```
   base
@@ -116,7 +116,7 @@ test();
 
 This will log all the relevant records to the console.
 
-Let's get rid of the test function and the test call and instead add a module.exports statment and set it equal to our getOpenRoles function. Our final code should look like this:
+Let's get rid of the test function and the test call and instead add a module.exports statement and set it equal to our getOpenRoles function. Our final code should look like this:
 
 ```
 const Airtable = require('airtable');
