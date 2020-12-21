@@ -99,11 +99,11 @@ import Papa from 'papaparse'
 
   const [data,setData] = useState(null)
   useEffect(()=>{
-    
+
   },[])
 
   return(
-    &#x3C;h1>Hello World&#x3C;/h1>  
+    &#x3C;h1>Hello World&#x3C;/h1>
   )
 }
 </code></pre>
@@ -156,7 +156,7 @@ import Papa from 'papaparse'
   </a>
     </span></p>
 <p>Yes! That's our data, now lets update our 'complete' function so instead of logging to the console, it saves that data to our data state variable.</p>
-<pre><code>//App.js  
+<pre><code>//App.js
 
 const [data,setData] = useState(null)
   useEffect(()=>{
@@ -254,7 +254,7 @@ const App = ()=>{
 
   return(
     &#x3C;>
-    &#x3C;h1>Hello World&#x3C;/h1> 
+    &#x3C;h1>Hello World&#x3C;/h1>
     &#x3C;data?&#x3C;Mapbox data={data}/>:''}
     &#x3C;/>
   )
@@ -318,7 +318,7 @@ export default App;
 <p>So at this point, our full Mapbox component should look like this:</p>
 <pre><code>const Mapbox = (props) => {
     const mapContainer = useRef(null)
-    
+
     useEffect(()=>{
         mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN
         const map = new mapboxgl.Map(
@@ -415,12 +415,12 @@ export default App;
     const g = 251
     const b = 152
 </code></pre>
-<p>We'll also need 2 other functions that will assist in converting rgb color componentes to hexidecimal strings. These functions are below:</p>
+<p>We'll also need 2 other functions that will assist in converting rgb color components to hexidecimal strings. These functions are below:</p>
 <pre><code>    function componentToHex(c) {
         var hex = c.toString(16);
         return hex.length == 1 ? "0" + hex : hex;
     }
-      
+
     function rgbToHex(r, g, b) {
         return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
     }

@@ -24,7 +24,7 @@ data-styled.g4[id="post__StyledPost-sc-130zpan-0"]{content:"EzSst,"}/*!sc*/
 <p>Let's see if we can optimize this.</p>
 <h2>Optimization</h2>
 <p>So the key for lowering the time complexity for this problem is something called memoization. Instead of looping through the entire array exponentially until we find a match, we can store the data from the given array into an object which will allow us to significantly cut back on our time complexity. This will however increase our space complexity since our object will end up being exactly as large as the array we pass in. Let's try it out.</p>
-<p>So first, we'll make our object. To do so, we'll initialize an empty object, loop through our array and for each item in the array create a key value pair from that value and index respecively.</p>
+<p>So first, we'll make our object. To do so, we'll initialize an empty object, loop through our array and for each item in the array create a key value pair from that value and index respectively.</p>
 <p><code>const object = {} for(let i = 0;i &#x3C; nums.length;i++){ object[nums[i]] = i }</code></p>
 <p>This will allow us to find the value we want, which will be the complement of the current array index to add to the target, and then look for object[complement]!</p>
 <p>So to make this work we'll need another loop after this one, to initialize each complement and check for that key in the object. We'll also confirm that the current index we're at in the loop is not the same index saved in our object. and if this is the case we'll return our two values.</p>

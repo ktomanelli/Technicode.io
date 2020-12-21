@@ -17,7 +17,7 @@ data-styled.g4[id="post__StyledPost-sc-130zpan-0"]{content:"EzSst,"}/*!sc*/
     //palindrome and false if not
 }
 </code></pre>
-<p>This is a very barebones question, we're just reversing the string we are given, comparing it with the initial string and returning true or false, simple right?</p>
+<p>This is a very bare-bones question, we're just reversing the string we are given, comparing it with the initial string and returning true or false, simple right?</p>
 <p>Let's try it out.</p>
 <h2>For Loop</h2>
 <pre><code>const isPalindrome=(string)=>{
@@ -40,7 +40,7 @@ data-styled.g4[id="post__StyledPost-sc-130zpan-0"]{content:"EzSst,"}/*!sc*/
 <p>In this function, we're converting the given string into an array of each char. We're then calling array.reverse() which is a built in JavaScript Array function which completely reverses the contents of the array. We're then calling array.join('') which then puts the array back into a string leaving us with the reversed string to which we then compare to the given string.</p>
 <p>This way of solving the problem looks significantly cleaner than the For Loop solution.</p>
 <h2>Edge Cases</h2>
-<p>Now these solutions will work fine for single word palindromes like 'racecar' but not for sentances or multi-word strings like 'taco cat'. We also want to account for the possibility that a string with capital letters can be checked, so we'll have to add some code to account for these cases.</p>
+<p>Now these solutions will work fine for single word palindromes like 'racecar' but not for sentences or multi-word strings like 'taco cat'. We also want to account for the possibility that a string with capital letters can be checked, so we'll have to add some code to account for these cases.</p>
 <pre><code>const isPalindrome=(string)=>{
     const cleanString = string.replace(/[^\w]/g,'').toLowerCase()
     const reverse = cleanString.split('').reverse().join('')

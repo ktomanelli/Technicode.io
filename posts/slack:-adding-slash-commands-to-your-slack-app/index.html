@@ -535,7 +535,7 @@ app.listen(3000);
     </span></p>
 <p>As you can see the cat is now able to distinguish our slash commands and respond to them individually.</p>
 <h2>Securing Our Server</h2>
-<p>Now the only thing we have left to do is secure our server. Currently, our bot will respond to anyone who sends a post request to it's url. Now for this particular bot, this wouldn't be too big of a deal, however, in a real life environment scenario where your company's data is accessable through these endpoints, it's much much better to make sure that only Slack's requests are being acted upon and any others get discarded.</p>
+<p>Now the only thing we have left to do is secure our server. Currently, our bot will respond to anyone who sends a post request to it's url. Now for this particular bot, this wouldn't be too big of a deal, however, in a real life environment scenario where your company's data is accessible through these endpoints, it's much much better to make sure that only Slack's requests are being acted upon and any others get discarded.</p>
 <p>To do this we'll follow the (Verifying requests from slack)[https://api.slack.com/authentication/verifying-requests-from-slack] page in the api docs.</p>
 <p>We'll need our 'signing secret' which we can get from, you guessed it, our app dashboard.</p>
 <p>And following the docs, we get the following function:</p>
