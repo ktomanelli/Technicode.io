@@ -84,4 +84,4 @@ At this point, our map is done! We have all our data displaying correctly and ar
 
 Our map should look like this: ![](images/Screen-Shot-2020-10-04-at-2.15.55-PM.png)
 
-If you'd like to check out the full code used in this blog, you can do so
+If you'd like to check out the full code used in this blog, you can do so [here](https://github.com/ktomanelli/unemployment-visualization)
